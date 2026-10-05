@@ -70,7 +70,6 @@ a{color:inherit}
 .price b{font:800 1.6rem var(--display);color:var(--ink);font-variant-numeric:tabular-nums}
 .price s{color:var(--muted);font-weight:700}
 .price span{color:var(--muted);font-size:.9rem;font-weight:700}
-.bundle{border-color:var(--yellow);border-width:3px}
 .empty{text-align:center;color:var(--muted);padding:24px;background:var(--surface);border-radius:var(--r);border:2px dashed var(--line)}
 
 /* how to buy */
@@ -168,32 +167,29 @@ const LYNK = {
   dunia_bi:     "https://lynk.id/cambikids/7dqq9ldmnd7k",
   hujan_id:     "https://lynk.id/cambikids/m2jj4j77wm26",
   hujan_bi:     "https://lynk.id/cambikids/lp77x71dly8p",
-  bundle:       "https://lynk.id/cambikids/z9ppxo65g6yq",
 };
 /* ===== Karya anak (diisi setelah ada kiriman) — {img, nama, umur, buku} ===== */
 const KARYA = [];
 
 const rp = n => "Rp" + n.toLocaleString("id-ID");
 const BOOKS = [
-  {key:"hujan", min:3, max:6, isNew:true, t:"Cambi & Musim Hujan", p:"10 halaman",
-   d:"Seri 2! Hujan turun, Cambi pakai payung daun. 6 episode: garis miring, lengkung, spiral, berhitung, dan mewarnai pelangi. Ada bonus Tebak Bayangan dan Sertifikat Sahabat Hujan.",
-   id:{img:"img/Thumbnail-Musim-Hujan-ID.jpg", price:19000},
-   bi:{img:"img/Thumbnail-Bilingual-Musim-Hujan.jpg", price:24000}},
-  {key:"cambi", min:3, max:6, t:"Dari Mana Cambi Datang?", p:"10 halaman",
-   d:"Cerita asal-usul Cambi dalam 6 episode: mewarnai, menarik garis, menebalkan, sampai menulis C-A-M-B-I. Ada bonus urutkan cerita dan sertifikat.",
-   id:{img:"img/Thumbnail-Dari-Mana-Cambi-Datang-ID.jpg", price:19000},
-   bi:{img:"img/Thumbnail-Bilingual-Dari-Mana-Cambi-Datang.jpg", price:24000}},
-  {key:"rutinitas", min:2, max:5, t:"Rutinitas Harianku", p:"11 halaman",
-   d:"8 kegiatan sehari-hari dari bangun pagi sampai tidur, plus Jadwal Harianku buat dicentang tiap hari.",
-   id:{img:"img/Thumbnail-Rutinitas-Harianku-ID.jpg", price:19000},
-   bi:{img:"img/Thumbnail-Bilingual-Rutinitas-Harianku.jpg", price:24000}},
+  {key:"hujan", min:3, max:6, isNew:true, t:"Cambi & Musim Hujan", p:"17 halaman",
+   d:"Seri 2! Main hujan bareng Cambi, Kodi, Pelan, dan Jemi. 12 aktivitas: garis miring, lengkung, spiral, pola, angka yang hilang, labirin, mengenal perasaan, sampai mewarnai pelangi. Bonus Tebak Bayangan, Boneka Jari, dan Sertifikat Sahabat Hujan.",
+   id:{img:"https://cdn.lynkid.my.id/products/05-10-2026/1791207060328_1112113.webp?width=640&quality=90", price:10000},
+   bi:{img:"https://cdn.lynkid.my.id/products/05-10-2026/1791207191965_5964044.webp?width=640&quality=90", price:15000}},
+  {key:"cambi", min:3, max:6, t:"Dari Mana Cambi Datang?", p:"17 halaman",
+   d:"Cerita asal-usul Cambi dalam 12 aktivitas: mewarnai, labirin, berhitung, cari perbedaan, menggambar wajah, sampai menulis C-A-M-B-I dan nama sendiri. Bonus Urutkan Cerita, Boneka Jari, dan sertifikat.",
+   id:{img:"https://cdn.lynkid.my.id/products/05-10-2026/1791206743463_9823055.webp?width=640&quality=90", price:10000},
+   bi:{img:"https://cdn.lynkid.my.id/products/05-10-2026/1791206912789_6789555.webp?width=640&quality=90", price:15000}},
+  {key:"rutinitas", min:2, max:5, t:"Rutinitas Harianku", p:"15 halaman",
+   d:"12 kegiatan sehari-hari dari bangun pagi sampai tidur, termasuk minum air putih, makan sayur, siram tanaman, dan baca buku. Plus Jadwal Harianku buat dicentang tiap hari.",
+   id:{img:"https://cdn.lynkid.my.id/products/05-10-2026/1791208178105_5100375.webp?width=640&quality=90", price:10000},
+   bi:{img:"https://cdn.lynkid.my.id/products/05-10-2026/1791208347965_9409264.webp?width=640&quality=90", price:15000}},
   {key:"dunia", min:3, max:6, t:"Dunia Sekitarku", p:"15 halaman",
    d:"12 aktivitas dalam 4 tema: hewan, buah, kendaraan, dan angka. Ada Sertifikat Juara Kecil di akhir.",
-   id:{img:"img/Thumbnail-Dunia-Sekitarku-ID.jpg", price:25000},
-   bi:{img:"img/Thumbnail-Bilingual-Dunia-Sekitarku.jpg", price:30000}},
+   id:{img:"img/Thumbnail-Dunia-Sekitarku-ID.jpg", price:10000},
+   bi:{img:"img/Thumbnail-Bilingual-Dunia-Sekitarku.jpg", price:15000}},
 ];
-const BUNDLE = {t:"Bundle 3 Buku CAMBI", img:"img/Thumbnail-Bundle-3-Buku.jpg", price:49000, normal:63000,
-  d:"Rutinitas Harianku, Dari Mana Cambi Datang?, dan Dunia Sekitarku dalam satu paket. Total 36 halaman, versi Bahasa Indonesia."};
 
 let age = 0, lang = "id";
 try{ const s = JSON.parse(localStorage.getItem("cambi-pick")||"{}"); if(s.age!=null) age=s.age; if(s.lang==="bi"||s.lang==="id") lang=s.lang; }catch(e){}
@@ -231,15 +227,6 @@ function render(){
       </div>`;
     el.appendChild(card);
   });
-  const bc=document.createElement("article"); bc.className="book bundle";
-  bc.innerHTML=`<img src="${BUNDLE.img}" alt="Sampul tiga buku CAMBI" loading="lazy">
-    <div class="body">
-      <div class="tags"><span class="tag new">Paling hemat</span><span class="tag age">Usia 2–6 th</span><span class="tag pages">36 halaman</span></div>
-      <h3>${BUNDLE.t}</h3><p>${BUNDLE.d}</p>
-      <div class="price"><b>${rp(BUNDLE.price)}</b><s>${rp(BUNDLE.normal)}</s><span>hemat ${rp(BUNDLE.normal-BUNDLE.price)}</span></div>
-      ${buyBtn(LYNK.bundle,"Beli bundle di Lynk →")}
-    </div>`;
-  el.appendChild(bc);
 }
 
 function renderKarya(){
