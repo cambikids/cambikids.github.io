@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <style>html,body{margin:0}[hidden]{display:none!important}</style>
 <title>CAMBI Kids</title>
-<meta name="description" content="CAMBI — buku aktivitas siap print untuk anak usia 2–6 tahun, plus panduan tumbuh kembang anak. Little Sprouts, Big Growth.">
+<meta name="description" content="CAMBI — buku aktivitas dan ide main siap print untuk anak usia 2–6 tahun, plus panduan tumbuh kembang anak. Little Sprouts, Big Growth.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&display=swap">
 <!-- Statistik pengunjung (Metricool) -->
@@ -17,6 +17,7 @@
 --orange:#ef8a3c; --yellow:#f5c02e; --blue:#4a90c8; --red:#e8586e; --pink:#f2a7b5;
 --sky1:#d6ecf8; --sky2:#f3f9ef; --soil:#8a5a3b; --soil-d:#5e3b26; --pot:#e07b45;
 --on-accent:#ffffff; --shadow:rgba(59,42,34,.12);
+--pk1:#fff3d1; --pk2:#ffe3d6; --pk3:#ece2fa;
 --display:"Baloo 2","Arial Rounded MT Bold","Trebuchet MS",sans-serif;
 --body:"Nunito","Segoe UI",system-ui,sans-serif;
 --hand:"Caveat","Comic Sans MS",cursive;
@@ -26,11 +27,13 @@
 --bg:#13201a; --bg2:#182a21; --surface:#1f3329; --ink:#f4ede6; --muted:#b9ada4; --line:#2e4b3c;
 --green:#6cc777; --green-d:#4fae5b; --green-ink:#6cc777; --green-soft:#24452f;
 --sky1:#1a2d3a; --sky2:#13201a; --soil:#5a3a26; --soil-d:#3b2618; --shadow:rgba(0,0,0,.35);
+--pk1:#2b3a26; --pk2:#38302a; --pk3:#2d2a40;
 color-scheme:dark}}
 :root[data-theme="dark"]{
 --bg:#13201a; --bg2:#182a21; --surface:#1f3329; --ink:#f4ede6; --muted:#b9ada4; --line:#2e4b3c;
 --green:#6cc777; --green-d:#4fae5b; --green-ink:#6cc777; --green-soft:#24452f;
 --sky1:#1a2d3a; --sky2:#13201a; --soil:#5a3a26; --soil-d:#3b2618; --shadow:rgba(0,0,0,.35);
+--pk1:#2b3a26; --pk2:#38302a; --pk3:#2d2a40;
 color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -145,9 +148,9 @@ button{font-family:inherit}
 .plant-card{background:var(--surface);border:2px solid var(--line);border-radius:var(--r);padding:20px;position:sticky;top:90px;display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center}
 .plant-card svg{width:100%;max-width:230px;height:auto}
 .ages{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
-.age{font:800 1.05rem var(--display);width:52px;height:52px;border-radius:50%;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;font-variant-numeric:tabular-nums;transition:transform .15s}
-.age:hover{transform:scale(1.08)}
-.age[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 4px 0 var(--green-d)}
+.ages .age{font:800 1.05rem var(--display);width:52px;height:52px;border-radius:50%;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;font-variant-numeric:tabular-nums;transition:transform .15s}
+.ages .age:hover{transform:scale(1.08)}
+.ages .age[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 4px 0 var(--green-d)}
 .plant-card h3{font-size:1.6rem}
 .plant-card p{color:var(--muted);font-size:.95rem}
 .domains{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
@@ -196,7 +199,7 @@ button{font-family:inherit}
 .book .cover img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:1}
 .book .peek{position:absolute;left:10px;bottom:10px;font:800 .85rem var(--body);background:var(--surface);color:var(--ink);border:0;border-radius:99px;padding:7px 12px;cursor:pointer;box-shadow:0 3px 0 var(--shadow)}
 .book .body{padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags{display:flex;flex-wrap:wrap;align-items:flex-start;align-content:flex-start;gap:6px}
 .tag{white-space:nowrap;font-size:.78rem;font-weight:800;padding:3px 10px;border-radius:99px;color:#fff}
 .tag.age{background:var(--yellow);color:#3b2a22}.tag.new{background:var(--red)}.tag.pages{background:var(--blue)}.tag.lang{background:var(--ink);color:var(--bg)}
 .book h3{font-size:1.45rem}
@@ -218,6 +221,32 @@ button{font-family:inherit}
 .plan b{font-family:var(--display);font-size:1.1rem}
 @media (max-width:640px){.compare{grid-template-columns:1fr}}
 .store-link{display:flex;justify-content:center;margin-top:26px}
+
+/* paket lengkap */
+section[id]{scroll-margin-top:72px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.promo{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;align-self:flex-start;text-decoration:none;font-weight:800;background:var(--surface);border:2px solid var(--line);border-radius:99px;padding:6px 16px 6px 8px}
+.promo:hover{border-color:var(--green)}
+.paket{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:30px;align-items:center;background:linear-gradient(135deg,var(--pk1),var(--pk2) 55%,var(--pk3));border:2px solid var(--line);border-radius:28px;padding:24px}
+.paket-cover img{width:100%;display:block;border-radius:20px;box-shadow:0 10px 0 var(--shadow);aspect-ratio:1;object-fit:cover}
+.paket-body{display:flex;flex-direction:column;gap:14px;min-width:0}
+.paket-body h3{font-size:clamp(1.8rem,3.4vw,2.5rem)}
+.paket-body p{color:var(--muted)}
+.paket-price{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px}
+.paket-price b{font:800 clamp(2.4rem,5vw,3.3rem) var(--display);font-variant-numeric:tabular-nums;line-height:1}
+.paket-price s{color:var(--muted);font-weight:800;font-size:1.2rem;font-variant-numeric:tabular-nums}
+.paket-price .save{background:var(--red);color:#fff;font-weight:800;font-size:.85rem;border-radius:99px;padding:3px 12px}
+.paket-note{font-size:.9rem}
+.paket-books{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}
+.pb{background:var(--surface);border:2px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.pb .top{display:flex;align-items:center;gap:10px}
+.pb .num{flex:none;width:36px;height:36px;border-radius:12px;display:grid;place-items:center;color:#fff;font:800 1.1rem var(--display)}
+.pb h4{font-size:1.15rem;line-height:1.1}
+.pb .meta{display:flex;flex-wrap:wrap;gap:6px}
+.pb .meta span{font-size:.78rem;font-weight:800;border-radius:99px;padding:2px 10px;background:var(--green-soft)}
+.pb p{color:var(--muted);font-size:.95rem}
+@media (max-width:900px){.paket{grid-template-columns:1fr}.paket-books{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.paket-books{grid-template-columns:1fr}.paket{padding:16px}}
 
 /* how */
 .how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;list-style:none;padding:0;margin:0;counter-reset:s}
@@ -303,6 +332,7 @@ button{font-family:inherit}
 <li><a href="#kenalan">Kenalan</a></li>
 <li><a href="#tumbuh">Tumbuh Kembang</a></li>
 <li><a href="#worksheet">Worksheet</a></li>
+<li><a href="#paket">Ide Main</a></li>
 <li><a href="#karya">Karya Anak</a></li>
 <li><a href="#faq">FAQ</a></li>
 </ul>
@@ -318,11 +348,12 @@ button{font-family:inherit}
 <span class="eyebrow">Buku aktivitas anak 2–6 tahun</span>
 <h1>Tumbuh pelan-pelan, <span class="g">belajar</span> sambil <span class="o">main</span> bareng Cambi.</h1>
 <p>Worksheet siap print yang disusun mengikuti tahap tumbuh kembang anak: dari corat-coret pertama sampai menulis nama sendiri. Cukup kertas A4, krayon, dan 15 menit bareng si kecil.</p>
-<div class="pills"><span class="pill y">Usia 2–6 th</span><span class="pill b">Siap print A4</span><span class="pill r">12 aktivitas per buku</span><span class="pill o">Indonesia + English</span></div>
+<div class="pills"><span class="pill y">Usia 2–6 th</span><span class="pill b">Siap print A4</span><span class="pill r">10+ aktivitas per buku</span><span class="pill o">Indonesia + English</span></div>
 <div class="cta">
 <a class="btn btn-go" href="#worksheet">Lihat Worksheet</a>
 <a class="btn btn-soft" href="#tumbuh">Cek tahap tumbuh kembang</a>
 </div>
+<a class="promo" href="#paket"><span class="tag new">Baru</span><span>Paket Lengkap 6 buku ide main · <b>Rp25.000</b> →</span></a>
 </div>
 <div class="stage">
 <div class="garden" id="garden">
@@ -342,8 +373,8 @@ button{font-family:inherit}
 
 <div class="strip">
 <div class="wrap">
-<div><b>4</b><span>buku aktivitas</span></div>
-<div><b>12+</b><span>aktivitas per buku</span></div>
+<div><b>10</b><span>buku aktivitas &amp; permainan</span></div>
+<div><b>10+</b><span>aktivitas per buku</span></div>
 <div><b>2–6</b><span>tahun, sesuai tahapan</span></div>
 <div><b>Rp10rb</b><span>mulai dari, per buku</span></div>
 </div>
@@ -429,6 +460,32 @@ button{font-family:inherit}
 </div>
 </section>
 
+<!-- ============ PAKET LENGKAP ============ -->
+<section class="sec" id="paket" style="padding-top:0">
+<div class="wrap" style="position:relative">
+<div class="sec-head">
+<span class="eyebrow">Ide main tanpa layar</span>
+<h2>Paket Lengkap: 6 buku, 65 aktivitas.</h2>
+<p>Bukan cuma lembar mewarnai. Ada permainan bareng Ayah &amp; Bunda, aktivitas mandiri, menanam kacang hijau, surat dari Cambi, kartu main, sampai jadi Detektif Kiki.</p>
+</div>
+<article class="paket">
+<div class="paket-cover"><img id="paket-img" src="https://cdn.lynkid.my.id/products/09-10-2026/1791514607986_2949346.webp?width=900&amp;quality=90" alt="Sampul Paket Lengkap CAMBI: 6 buku, Indonesia + English"></div>
+<div class="paket-body">
+<div class="tags"><span class="tag new">Baru</span><span class="tag age">Usia 3–6 th</span><span class="tag pages">83 hlm per bahasa</span><span class="tag lang">ID + EN</span></div>
+<h3>Paket Lengkap CAMBI</h3>
+<p>1 file ZIP berisi 12 PDF A4: 6 buku dalam 2 bahasa, Indonesia dan English. Print ulang sepuasnya untuk si kecil.</p>
+<div class="paket-price"><b>Rp25.000</b><s><span class="sr">Harga normal </span>Rp60.000</s><span class="save">Hemat 58%</span></div>
+<div class="cta">
+<a class="btn btn-go" id="paket-buy" href="https://lynk.id/cambikids/vd11z98ygv17" target="_blank" rel="noopener">Beli Paket di Lynk →</a>
+<button class="btn btn-soft" id="paket-peek" type="button">Intip isi</button>
+</div>
+<p class="paket-note">Beberapa kegiatan memakai gunting dan benda kecil seperti kacang. Dampingi anak, terutama di bawah 3 tahun.</p>
+</div>
+</article>
+<div class="paket-books" id="paket-books"></div>
+</div>
+</section>
+
 <!-- ============ CARA PAKAI ============ -->
 <section class="sec" style="padding-top:0">
 <div class="wrap">
@@ -469,6 +526,8 @@ button{font-family:inherit}
 <div class="faq">
 <details><summary>Bukunya dikirim dalam bentuk apa?</summary><p>Berupa file PDF ukuran A4 yang langsung bisa didownload setelah pembayaran di Lynk berhasil. Tidak ada buku fisik yang dikirim.</p></details>
 <details><summary>Bedanya versi Satuan dan Paket Bilingual?</summary><p>Satuan berisi 1 PDF Bahasa Indonesia (Rp10.000). Paket Bilingual berisi 2 PDF, versi Indonesia dan versi English, dengan isi aktivitas yang sama (Rp15.000). Versi English hanya tersedia di dalam paket bilingual.</p></details>
+<details><summary>Apa bedanya Paket Lengkap dengan worksheet satuan?</summary><p>Worksheet satuan (Rp10.000 atau Rp15.000 bilingual) berisi halaman aktivitas di atas kertas: mewarnai, menebalkan garis, labirin, dan berhitung. Paket Lengkap (Rp25.000) berisi ide main: permainan bareng ortu, aktivitas mandiri, jurnal menanam, surat dari Cambi, kartu, dan misi detektif. Keduanya dibeli terpisah di Lynk.</p></details>
+<details><summary>Kertas apa yang cocok untuk Paket Lengkap?</summary><p>Kertas A4 biasa cukup. Kartu, dadu, dan halaman gunting lebih awet kalau dicetak di kertas yang lebih tebal, misalnya art paper atau karton. Bagian memotong kardus hanya untuk orang dewasa.</p></details>
 <details><summary>Boleh diprint berkali-kali?</summary><p>Boleh, untuk dipakai anak sendiri di rumah. Mohon file tidak dibagikan atau dijual ulang, ya.</p></details>
 <details><summary>Anak saya belum bisa memegang krayon dengan benar. Masih cocok?</summary><p>Cocok. Halaman awal setiap buku dimulai dari gerakan bebas seperti mencoret dan melingkar. Biarkan anak mencoba dengan caranya sendiri. Pegangan jari biasanya mulai rapi di usia sekitar 4 tahun.</p></details>
 <details><summary>Berapa halaman sebaiknya dikerjakan sehari?</summary><p>Satu sampai dua halaman sudah cukup. Berhenti saat anak masih senang, supaya besok dia minta lagi.</p></details>
@@ -490,6 +549,7 @@ button{font-family:inherit}
 <a href="#kenalan">Kenalan sama Cambi</a>
 <a href="#tumbuh">Panduan tumbuh kembang</a>
 <a href="#worksheet">Worksheet</a>
+<a href="#paket">Paket Lengkap Ide Main</a>
 <a href="#karya">Pojok Karya Anak</a>
 </div>
 <div>
@@ -655,7 +715,7 @@ const fit = BOOKS.filter(b=>gAge>=b.min && gAge<=b.max);
 document.getElementById("domains").innerHTML =
 DOMAINS.map(([k,t,c,ic])=>`<div class="domain"><header><i style="background:${c}"><svg viewBox="0 0 24 24">${ic}</svg></i><h4>${t}</h4></header><ul>${g[k].map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("")
 + `<div class="domain play"><header><h4>Ide main di rumah, 10–15 menit</h4></header><ul>${g.play.map(([a,b])=>`<li><b>${a}</b>${b}</li>`).join("")}</ul></div>`
-+ `<div class="fit"><span>Buku CAMBI yang pas:</span>${fit.map(b=>`<a href="#book-${b.key}" data-jump="${b.key}">${b.t} →</a>`).join("")}</div>`
++ `<div class="fit"><span>Buku CAMBI yang pas:</span>${fit.map(b=>`<a href="#book-${b.key}" data-jump="${b.key}">${b.t} →</a>`).join("")}${gAge>=3?'<a href="#paket">Paket Lengkap Ide Main →</a>':''}</div>`
 + `<p class="note">Ini patokan umum, bukan alat diagnosis. Kalau ada kemampuan yang belum muncul jauh setelah usianya, atau kemampuan yang tadinya bisa jadi hilang, ngobrol ke bidan, posyandu, atau dokter anak. Pantau juga lewat Buku KIA dan cek KPSP rutin.</p>`;
 document.querySelectorAll("[data-jump]").forEach(a=>a.onclick=()=>{ shopAge=gAge; renderShop(); });
 }
@@ -766,6 +826,27 @@ const cols=["#45a94f","#ef8a3c","#f5c02e","#4a90c8","#e8586e"];
 const P=Array.from({length:140},()=>({x:innerWidth/2,y:innerHeight*.35,vx:(Math.random()-.5)*14,vy:Math.random()*-12-4,s:6+Math.random()*6,c:cols[Math.random()*5|0],r:Math.random()*6}));
 let t=0; (function f(){ c.clearRect(0,0,cv.width,cv.height); P.forEach(p=>{p.vy+=.35;p.x+=p.vx;p.y+=p.vy;p.r+=.1;c.save();c.translate(p.x,p.y);c.rotate(p.r);c.fillStyle=p.c;c.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);c.restore();}); if(++t<160) requestAnimationFrame(f); else c.clearRect(0,0,cv.width,cv.height); })();
 }
+
+/* ================= PAKET LENGKAP ================= */
+const PAKET_URL = "https://lynk.id/cambikids/vd11z98ygv17";
+const PAKET_IMG = ["https://cdn.lynkid.my.id/products/09-10-2026/1791514608072_4198519.webp?width=900&quality=90","https://cdn.lynkid.my.id/products/09-10-2026/1791514608143_7502158.webp?width=900&quality=90"];
+const PAKET_BOOKS = [
+{n:"Main Bareng Cambi",h:15,who:"Bareng Ayah & Bunda",c:"var(--orange)",d:"12 permainan seru di rumah: Lomba Siput Pelan, Pasar Daun, Teater Bayangan, Tebak Suara, Peta Harta Karun, dan lainnya."},
+{n:"Main Sendiri Bareng Cambi",h:15,who:"Main sendiri",c:"var(--blue)",d:"12 aktivitas mandiri: Jalur Selotip, Cari Kiki di Kacang, Botol Tenang, Stempel Sayur, Puzzle, Lompat Kodi, dan lainnya."},
+{n:"Jurnal Tumbuh Cambi",h:13,who:"Ortu atau sendiri",c:"var(--green)",d:"Jurnal 7 hari menanam kacang hijau, lengkap dengan tebakan, penggaris tinggi, kalender siram, dan lembar stiker."},
+{n:"Paket Surat dari Cambi",h:18,who:"Bareng Ayah & Bunda",c:"var(--red)",d:"Rakit kotak pos dan amplop, tulis 4 surat untuk Cambi, lalu balas dengan 10 surat dari Cambi yang tinggal disalin ortu."},
+{n:"Kartu Main Cambi",h:10,who:"Bareng atau sendiri",c:"var(--yellow)",d:"Dadu Dongeng, Papan Cerita, 16 kartu \"Cambi Bilang\", Kartu Rasa, Kartu Tantangan, dan Papan Bintang."},
+{n:"Operasi Cari Kiki",h:12,who:"Tanpa perlu membaca",c:"var(--red)",d:"Gunting 10 Kiki dan sembunyikan di rumah, cari lewat kartu petunjuk bergambar, lalu raih Lencana Detektif."},
+];
+document.getElementById("paket-books").innerHTML = PAKET_BOOKS.map((b,i)=>`<div class="pb"><div class="top"><span class="num" style="background:${b.c};${i===4?'color:#3b2a22':''}">${i+1}</span><h4>${b.n}</h4></div><div class="meta"><span>${b.h} hlm</span><span>${b.who}</span></div><p>${b.d}</p></div>`).join("");
+document.getElementById("paket-peek").onclick = () => {
+lastFocus=document.activeElement;
+document.getElementById("lb-title").textContent="Intip isi: Paket Lengkap CAMBI";
+document.getElementById("lb-imgs").innerHTML=PAKET_IMG.map((p,i)=>`<img src="${p}" alt="${i?'Cara pakai':'Contoh halaman'} Paket Lengkap CAMBI">`).join("");
+document.getElementById("lb-buy").href=PAKET_URL;
+document.getElementById("lb-buy").textContent="Beli di Lynk · Rp25.000 →";
+lb.hidden=false; document.getElementById("lb-x").focus();
+};
 
 renderGrowth(); renderShop();
 </script>
