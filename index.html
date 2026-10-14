@@ -4,18 +4,23 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <style>html,body{margin:0}[hidden]{display:none!important}</style>
 <title>CAMBI Kids</title>
-<meta name="description" content="CAMBI — buku aktivitas dan ide main siap print untuk anak usia 2–6 tahun, plus panduan tumbuh kembang anak. Little Sprouts, Big Growth.">
+<meta name="description" content="Intip isi buku aktivitas CAMBI dulu, baru beli. Worksheet dan ide main siap print A4 untuk anak usia 2–6 tahun. Little Sprouts, Big Growth.">
+<meta name="theme-color" content="#45a94f">
+<meta property="og:title" content="CAMBI Kids: intip isi bukunya dulu, baru beli">
+<meta property="og:description" content="Worksheet dan ide main siap print untuk anak 2–6 tahun. Lihat halaman aslinya, coba 1 halaman gratis.">
+<meta property="og:image" content="https://cambikids.github.io/img/cambi-avatar.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&display=swap">
 <!-- Statistik pengunjung (Metricool) -->
 <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"447da7c98c190369d3085620eb51b243"})});</script>
 <style>
-/* Layout: a garden that grows downward — sky hero with Cambi in his pot, grass edge, then "beds" of content: meet Cambi, growth guide (interactive plant per age), worksheet shop, kids' art, FAQ, soil footer */
+/* Alur: hero singkat -> pilih usia -> intip isi (galeri halaman asli) -> coba gratis -> daftar beli. Mobile-first. */
 :root{
 --bg:#f3f9ef; --bg2:#e6f3e2; --surface:#ffffff; --ink:#3b2a22; --muted:#6e5f56; --line:#dbe9d6;
 --green:#45a94f; --green-d:#2e7d38; --green-ink:#2e7d38; --green-soft:#d8f0d9;
 --orange:#ef8a3c; --yellow:#f5c02e; --blue:#4a90c8; --red:#e8586e; --pink:#f2a7b5;
---sky1:#d6ecf8; --sky2:#f3f9ef; --soil:#8a5a3b; --soil-d:#5e3b26; --pot:#e07b45;
+--cta:#ef8a3c; --cta-d:#b9601b; --cta-ink:#3b2a22;
+--sky1:#d6ecf8; --sky2:#f3f9ef; --soil:#8a5a3b; --soil-d:#5e3b26;
 --on-accent:#ffffff; --shadow:rgba(59,42,34,.12);
 --pk1:#fff3d1; --pk2:#ffe3d6; --pk3:#ece2fa;
 --display:"Baloo 2","Arial Rounded MT Bold","Trebuchet MS",sans-serif;
@@ -39,227 +44,211 @@ color-scheme:dark}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{background:var(--bg);color:var(--ink);font:500 17px/1.6 var(--body);margin:0}
+body{background:var(--bg);color:var(--ink);font:500 17px/1.6 var(--body);margin:0;-webkit-text-size-adjust:100%}
 h1,h2,h3,h4{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance}
 p{margin:0}
 a{color:inherit}
 img{max-width:100%}
 button{font-family:inherit}
 :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:10px}
+section[id]{scroll-margin-top:72px}
 .wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
 .eyebrow{font:800 .78rem var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--green-ink)}
-.sec{padding-block:72px}
-.sec-head{display:flex;flex-direction:column;gap:10px;max-width:640px;margin-bottom:34px}
-.sec-head h2{font-size:clamp(2rem,4.4vw,3rem)}
-.sec-head p{color:var(--muted);font-size:1.08rem}
-.hand{font-family:var(--hand);font-size:1.5em;color:var(--orange);line-height:1}
+.sec{padding-block:56px}
+.sec-head{display:flex;flex-direction:column;gap:10px;max-width:640px;margin-bottom:26px}
+.sec-head h2{font-size:clamp(1.9rem,4.6vw,3rem)}
+.sec-head p{color:var(--muted);font-size:1.06rem}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:800 1.02rem var(--body);text-decoration:none;border:0;border-radius:16px;padding:14px 22px;cursor:pointer;transition:transform .12s, box-shadow .12s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:800 1.02rem var(--body);text-decoration:none;border:0;border-radius:16px;padding:14px 22px;cursor:pointer;transition:transform .12s, box-shadow .12s;text-align:center}
 .btn-go{background:var(--green);color:var(--on-accent);box-shadow:0 5px 0 var(--green-d)}
 .btn-go:active{transform:translateY(3px);box-shadow:0 2px 0 var(--green-d)}
 .btn-soft{background:var(--surface);color:var(--ink);box-shadow:0 5px 0 var(--line);border:2px solid var(--line)}
 .btn-soft:active{transform:translateY(3px);box-shadow:0 2px 0 var(--line)}
+.btn-cta{background:var(--cta);color:var(--cta-ink);box-shadow:0 6px 0 var(--cta-d);font-size:1.12rem;padding:16px 26px;border-radius:18px}
+.btn-cta:active{transform:translateY(4px);box-shadow:0 2px 0 var(--cta-d)}
+.btn-cta:hover{filter:brightness(1.04)}
 
 /* nav */
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:2px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;gap:18px;height:66px}
-.nav .logo{height:38px;width:auto;display:block}
+.nav .wrap{display:flex;align-items:center;gap:18px;height:62px}
+.nav .logo{height:36px;width:auto;display:block}
 .nav ul{display:flex;gap:4px;list-style:none;margin:0 0 0 auto;padding:0}
 .nav ul a{display:block;text-decoration:none;font-weight:800;font-size:.95rem;padding:8px 12px;border-radius:12px;color:var(--muted)}
 .nav ul a:hover{background:var(--green-soft);color:var(--ink)}
-.nav .btn{padding:10px 16px;font-size:.95rem;box-shadow:0 4px 0 var(--green-d)}
+.nav .btn{padding:9px 16px;font-size:.95rem;border-radius:14px;box-shadow:0 4px 0 var(--cta-d)}
 @media (max-width:860px){.nav ul{display:none}.nav .btn{margin-left:auto}}
 
-/* hero */
+/* hero (singkat) */
 .hero{background:linear-gradient(180deg,var(--sky1),var(--sky2));position:relative;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;padding-block:56px 90px}
-.hero-copy{display:flex;flex-direction:column;gap:20px;min-width:0;position:relative;z-index:2}
-.hero h1{font-size:clamp(2.6rem,6.2vw,4.6rem);letter-spacing:-.01em}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;padding-block:34px 70px}
+.hero-copy{display:flex;flex-direction:column;gap:16px;min-width:0;position:relative;z-index:2}
+.hero h1{font-size:clamp(2.3rem,6.6vw,4.2rem);letter-spacing:-.01em}
 .hero h1 .g{color:var(--green)} .hero h1 .o{color:var(--orange)}
-.hero-copy>p{font-size:1.15rem;color:var(--muted);max-width:46ch}
+.hero-copy>p{font-size:1.1rem;color:var(--muted);max-width:44ch}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
-.pills{display:flex;flex-wrap:wrap;gap:8px}
-.pill{font-weight:800;font-size:.88rem;padding:6px 14px;border-radius:99px;color:var(--on-accent)}
-.pill.y{background:var(--yellow);color:#3b2a22}.pill.b{background:var(--blue)}.pill.r{background:var(--red)}.pill.o{background:var(--orange)}
+.trust{display:flex;flex-wrap:wrap;gap:8px}
+.trust span{font-weight:800;font-size:.84rem;padding:5px 12px;border-radius:99px;background:var(--surface);border:2px solid var(--line)}
+.promo{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;text-decoration:none;font-weight:800;background:var(--surface);border:2px solid var(--line);border-radius:99px;padding:6px 16px 6px 8px;font-size:.95rem}
+.promo:hover{border-color:var(--green)}
+.promo span:last-child{white-space:nowrap}
 .cloud{position:absolute;background:var(--surface);border-radius:99px;opacity:.75;z-index:1}
 .cloud::before,.cloud::after{content:"";position:absolute;background:inherit;border-radius:50%}
-.cloud.c1{width:130px;height:38px;top:40px;left:46%;animation:drift 22s linear infinite alternate}
+.cloud.c1{width:130px;height:38px;top:36px;left:46%;animation:drift 22s linear infinite alternate}
 .cloud.c1::before{width:56px;height:56px;top:-26px;left:22px}.cloud.c1::after{width:44px;height:44px;top:-18px;left:64px}
-.cloud.c2{width:90px;height:28px;top:120px;right:4%;animation:drift 18s linear infinite alternate-reverse}
-.cloud.c2::before{width:40px;height:40px;top:-20px;left:16px}.cloud.c2::after{width:30px;height:30px;top:-12px;left:46px}
 @keyframes drift{to{transform:translateX(60px)}}
-.grass{position:absolute;left:0;right:0;bottom:-1px;height:46px;display:block;width:100%}
+.grass{position:absolute;left:0;right:0;bottom:-1px;height:40px;display:block;width:100%}
+.fan{position:relative;height:340px;width:100%;max-width:470px;margin-inline:auto;z-index:2}
+.fan .pgimg{position:absolute;width:42%;height:auto;border-radius:12px;border:3px solid #fff;background:#fff;box-shadow:0 8px 0 var(--shadow),0 18px 28px var(--shadow)}
+.fan .f1{left:6%;top:34px;transform:rotate(-8deg);z-index:1}
+.fan .f2{left:29%;top:4px;transform:rotate(2deg);z-index:3}
+.fan .f3{right:5%;top:42px;transform:rotate(9deg);z-index:2}
+.fan .mascot{position:absolute;left:-3%;bottom:-6px;width:27%;z-index:4;animation:bob 3.4s ease-in-out infinite}
+.fan .mascot img{width:100%;height:auto;display:block;border-radius:50%}
+@keyframes bob{50%{transform:translateY(-7px) rotate(-2.5deg)}}
+.fan .bubble{position:absolute;left:25%;bottom:6px;z-index:5;background:var(--surface);border:3px solid var(--ink);border-radius:18px;padding:7px 13px;font:800 .95rem var(--display);line-height:1.2;max-width:200px}
+.fan .bubble::after{content:"";position:absolute;left:-10px;bottom:10px;width:14px;height:14px;background:var(--surface);border-left:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:rotate(45deg)}
+@media (max-width:860px){
+.cloud{display:none}
+.promo{font-size:.9rem}
+.hero .wrap{grid-template-columns:1fr;padding-block:20px 60px;gap:14px}
+.hero-copy{display:contents}
+.hero-copy .eyebrow{order:1}.hero h1{order:2;font-size:clamp(2.1rem,9vw,3rem)}
+.fan{order:3;height:250px;max-width:380px}
+.hero-copy .cta{order:4}.hero-copy .trust{order:5}.hero-copy .promo{order:6}
+.hero-copy>p{display:none}
+.trust span:nth-child(n+2){display:none}
+.hero-copy .cta .btn{flex:1 1 100%}
+}
+@media (min-width:861px){.hero-copy .cta .btn{flex:none}}
 
-/* stage (Cambi + watering) */
-.stage{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;z-index:2}
-.garden{position:relative;width:min(360px,80vw);aspect-ratio:1/1.12}
-.sun{position:absolute;top:0;right:4%;width:74px;height:74px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 12px color-mix(in srgb,var(--yellow) 30%,transparent);animation:pulse 4s ease-in-out infinite}
-@keyframes pulse{50%{box-shadow:0 0 0 20px color-mix(in srgb,var(--yellow) 18%,transparent)}}
-.sun::after{content:"";position:absolute;left:24px;top:30px;width:26px;height:12px;border-bottom:4px solid #3b2a22;border-radius:0 0 20px 20px}
-.cambi{position:absolute;left:50%;bottom:21%;width:66%;transform:translateX(-50%);transform-origin:50% 100%;transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
-.cambi img{width:100%;display:block;border-radius:50%;animation:bob 3.4s ease-in-out infinite}
-@keyframes bob{50%{transform:translateY(-8px) rotate(-2.5deg)}}
-.pot{position:absolute;left:50%;bottom:0;width:62%;height:28%;transform:translateX(-50%)}
-.pot .rim{position:absolute;top:0;left:-6%;right:-6%;height:30%;background:var(--pot);border-radius:12px;box-shadow:inset 0 -6px 0 rgba(0,0,0,.12)}
-.pot .body{position:absolute;top:26%;left:4%;right:4%;bottom:0;background:var(--pot);clip-path:polygon(0 0,100% 0,88% 100%,12% 100%);filter:brightness(.92)}
-.pot .label{position:absolute;top:48%;left:50%;transform:translateX(-50%);font:800 1.1rem var(--display);color:#fff;letter-spacing:.08em}
-.drop{position:absolute;width:12px;height:16px;background:var(--blue);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;top:12%;animation:fall .9s ease-in forwards;z-index:3}
-@keyframes fall{from{transform:translateY(-30px);opacity:0}15%{opacity:1}to{transform:translateY(150px);opacity:0}}
-.bubble{position:absolute;left:-4%;top:6%;background:var(--surface);border:3px solid var(--ink);border-radius:20px;padding:8px 14px;font:800 1rem var(--display);max-width:190px;line-height:1.2;transform:scale(0);transform-origin:80% 100%;transition:transform .35s cubic-bezier(.3,1.6,.5,1);z-index:4}
-.bubble.show{transform:scale(1)}
-.bubble::after{content:"";position:absolute;right:22px;bottom:-14px;width:18px;height:18px;background:var(--surface);border-right:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:rotate(45deg)}
-.water{display:flex;align-items:center;gap:12px;background:var(--surface);border:2px solid var(--line);border-radius:99px;padding:6px 8px 6px 18px;font-weight:800}
-.water small{color:var(--muted);font-weight:700}
-.water .btn{padding:9px 16px;font-size:.95rem;background:var(--blue);color:#fff;box-shadow:0 4px 0 #2f6c9e}
-.water .btn:active{transform:translateY(3px);box-shadow:0 1px 0 #2f6c9e}
-.meter{display:flex;gap:4px}.meter i{width:10px;height:10px;border-radius:50%;background:var(--line)}.meter i.on{background:var(--blue)}
-@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-block:36px 80px}.stage{order:-1}}
-
-/* strip */
-.strip{background:var(--green);color:#fff}
-.strip .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding-block:22px}
-.strip div{display:flex;flex-direction:column;align-items:center;text-align:center}
-.strip b{font:800 2rem var(--display);line-height:1;font-variant-numeric:tabular-nums}
-.strip span{font-weight:700;font-size:.92rem;opacity:.92}
-@media (max-width:640px){.strip .wrap{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px}}
-
-/* meet */
-.meet{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:start}
-.story{display:flex;flex-direction:column;gap:16px;min-width:0}
-.story p{font-size:1.08rem}
-.story .quote{font-family:var(--hand);font-size:2rem;color:var(--green-d);line-height:1.1;color:var(--green-ink)}
-.timeline{list-style:none;padding:0;margin:6px 0 0;display:grid;gap:10px}
-.timeline li{display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:center;background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:10px 14px}
-.timeline .st{width:52px;height:52px;display:grid;place-items:center}
-.timeline b{display:block;font-family:var(--display);font-size:1.1rem}
-.timeline small{color:var(--muted);font-weight:600}
-.friends{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
-.friend{background:var(--surface);border:2px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:6px;transition:transform .2s}
-.friend:hover{transform:translateY(-4px) rotate(-1deg)}
-.friend svg{width:64px;height:64px}
-.friend b{font:800 1.15rem var(--display)}
-.friend small{color:var(--muted);font-weight:600;line-height:1.4}
-@media (max-width:860px){.meet{grid-template-columns:1fr}}
-
-/* growth guide */
-.grow{background:var(--bg2)}
-.grow-box{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start}
-.plant-card{background:var(--surface);border:2px solid var(--line);border-radius:var(--r);padding:20px;position:sticky;top:90px;display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center}
-.plant-card svg{width:100%;max-width:230px;height:auto}
-.ages{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
-.ages .age{font:800 1.05rem var(--display);width:52px;height:52px;border-radius:50%;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;font-variant-numeric:tabular-nums;transition:transform .15s}
-.ages .age:hover{transform:scale(1.08)}
-.ages .age[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 4px 0 var(--green-d)}
-.plant-card h3{font-size:1.6rem}
-.plant-card p{color:var(--muted);font-size:.95rem}
-.domains{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.domain{background:var(--surface);border:2px solid var(--line);border-radius:18px;padding:16px 18px;min-width:0}
-.domain header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.domain header i{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;flex:none}
-.domain header i svg{width:20px;height:20px}
-.domain h4{font-size:1.15rem}
-.domain ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:.98rem}
-.domain li::marker{color:var(--green)}
-.play{grid-column:1/-1;background:var(--green-soft);border:0}
-.play ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.play li{background:var(--surface);border-radius:14px;padding:12px 14px;font-weight:600}
-.play li b{display:block;font-family:var(--display);font-size:1.05rem;margin-bottom:2px}
-.fit{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.fit span{font-weight:800}
-.fit a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:800;background:var(--surface);border:2px solid var(--line);border-radius:99px;padding:6px 14px}
-.fit a:hover{border-color:var(--green)}
-.note{grid-column:1/-1;font-size:.9rem;color:var(--muted);background:var(--surface);border:2px dashed var(--line);border-radius:16px;padding:12px 16px}
-@media (max-width:900px){.grow-box{grid-template-columns:1fr}.plant-card{position:static}.play ul{grid-template-columns:1fr}}
-@media (max-width:600px){.domains{grid-template-columns:1fr}}
-
-/* skill ladder */
-.ladder{margin-top:46px}
-.ladder h3{font-size:1.7rem;margin-bottom:6px}
-.ladder>p{color:var(--muted);margin-bottom:18px;max-width:60ch}
-.steps5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;align-items:end}
-.rung{background:var(--surface);border:2px solid var(--line);border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
-.rung canvas{width:100%;height:auto;aspect-ratio:4/3;background:var(--bg);border-radius:12px;display:block}
-.rung b{font-family:var(--display);font-size:1.1rem;line-height:1.1}
-.rung small{color:var(--muted);font-weight:600;line-height:1.35}
-.rung .n{font:800 .78rem var(--body);color:#fff;border-radius:99px;padding:2px 10px;align-self:flex-start}
-.rung:nth-child(2){margin-bottom:14px}.rung:nth-child(3){margin-bottom:28px}.rung:nth-child(4){margin-bottom:42px}.rung:nth-child(5){margin-bottom:56px}
-@media (max-width:860px){.steps5{grid-template-columns:repeat(2,minmax(0,1fr))}.rung{margin-bottom:0!important}}
-
-/* shop */
-.shop-bar{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center;background:var(--surface);border:2px solid var(--line);border-radius:var(--r);padding:14px 18px;margin-bottom:22px}
-.shop-bar .label{font:800 .75rem var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:8px}
+/* pilih usia */
+.picker{background:var(--surface);border:2px solid var(--line);border-radius:26px;padding:20px;display:grid;gap:18px}
+.picker .row{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.picker .label{font:800 .75rem var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);flex:none;min-width:48px}
+.ages{display:flex;gap:8px;flex-wrap:wrap}
+.agebtn{font:800 1.15rem var(--display);width:60px;height:60px;border-radius:50%;border:2px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;font-variant-numeric:tabular-nums;transition:transform .15s;line-height:1.05;padding:0}
+.agebtn small{display:block;font:800 .62rem var(--body);opacity:.75}
+.agebtn:hover{transform:scale(1.07)}
+.agebtn[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 4px 0 var(--green-d)}
+.agebtn.all{width:auto;border-radius:99px;padding:0 20px;font-size:1rem}
 .chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.chip{font:800 .95rem var(--body);color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:99px;padding:6px 14px;cursor:pointer;font-variant-numeric:tabular-nums}
+.chip{font:800 .95rem var(--body);color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:99px;padding:8px 16px;cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.result{margin-left:auto;font-weight:800;color:var(--green-ink)}
-.books{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.book{background:var(--surface);border:2px solid var(--line);border-radius:var(--r);overflow:hidden;display:grid;grid-template-columns:44% 1fr;min-width:0}
-.book .cover{position:relative;background:var(--bg2)}
-.book .cover img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:1}
-.book .peek{position:absolute;left:10px;bottom:10px;font:800 .85rem var(--body);background:var(--surface);color:var(--ink);border:0;border-radius:99px;padding:7px 12px;cursor:pointer;box-shadow:0 3px 0 var(--shadow)}
-.book .body{padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.tags{display:flex;flex-wrap:wrap;align-items:flex-start;align-content:flex-start;gap:6px}
+.age-panel{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;background:var(--bg2);border-radius:20px;padding:16px}
+.age-panel img{width:64px;height:64px;border-radius:50%}
+.age-panel h3{font-size:1.35rem;margin-bottom:2px}
+.age-panel p{color:var(--muted);font-size:.98rem}
+.age-panel ul{margin:8px 0 0;padding-left:18px;display:grid;gap:2px;font-size:.96rem}
+.age-panel li::marker{color:var(--green)}
+.age-panel .fine{font-size:.82rem;margin-top:8px}
+.age-panel .fit{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
+.age-panel .fit a{display:inline-flex;text-decoration:none;font-weight:800;font-size:.92rem;background:var(--surface);border:2px solid var(--line);border-radius:99px;padding:5px 13px}
+.age-panel .fit a:hover{border-color:var(--green)}
+.result{font-weight:800;color:var(--green-ink)}
+.result button{font:800 .9rem var(--body);background:none;border:0;color:var(--ink);text-decoration:underline;cursor:pointer;padding:0 0 0 8px}
+
+/* intip isi */
+.intip{background:var(--bg2)}
+.pvs{display:grid;gap:26px}
+.pv{background:var(--surface);border:2px solid var(--line);border-radius:28px;padding:20px 0 22px;overflow:hidden;min-width:0}
+.pv.feat{background:linear-gradient(135deg,var(--pk1),var(--pk2) 55%,var(--pk3))}
+.pv-head{display:flex;gap:14px;align-items:center;padding-inline:20px;margin-bottom:14px}
+.pv-head img{width:78px;height:78px;border-radius:16px;object-fit:cover;flex:none;border:2px solid var(--line);background:var(--bg2)}
+.pv-head h3{font-size:clamp(1.4rem,3.6vw,2rem);margin-top:4px}
+.tags{display:flex;flex-wrap:wrap;align-items:flex-start;gap:6px}
 .tag{white-space:nowrap;font-size:.78rem;font-weight:800;padding:3px 10px;border-radius:99px;color:#fff}
-.tag.age{background:var(--yellow);color:#3b2a22}.tag.new{background:var(--red)}.tag.pages{background:var(--blue)}.tag.lang{background:var(--ink);color:var(--bg)}
-.book h3{font-size:1.45rem}
-.book p{color:var(--muted);font-size:.95rem}
+.tag.age{background:var(--yellow);color:#3b2a22}.tag.new{background:var(--red)}.tag.pages{background:var(--blue)}.tag.lang{background:var(--ink);color:var(--bg)}.tag.star{background:var(--orange)}
+.gal{position:relative}
+.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 20px 14px;scroll-padding-inline:20px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.pg{flex:none;width:min(70vw,290px);aspect-ratio:800/1132;border-radius:16px;overflow:hidden;border:2px solid var(--line);background:#fff;scroll-snap-align:start;padding:0;cursor:zoom-in;position:relative;box-shadow:0 8px 0 var(--shadow)}
+.pg img{width:100%;height:100%;display:block;object-fit:cover}
+.pg .cap{position:absolute;left:8px;bottom:8px;right:8px;font:800 .8rem var(--body);background:color-mix(in srgb,var(--surface) 92%,transparent);color:var(--ink);border-radius:10px;padding:4px 9px;text-align:left;line-height:1.25}
+.pg .zoom{position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:50%;background:color-mix(in srgb,var(--surface) 92%,transparent);display:grid;place-items:center}
+.pg .zoom svg{width:17px;height:17px}
+.pg.bonus{border-color:var(--orange);border-width:3px}
+.pg .ribbon{position:absolute;top:10px;left:-3px;background:var(--orange);color:#3b2a22;font:800 .78rem var(--body);padding:3px 12px 3px 10px;border-radius:0 99px 99px 0}
+.gal-ui{display:flex;align-items:center;gap:12px;padding-inline:20px;color:var(--muted);font-weight:800;font-size:.9rem}
+.gal-ui .cnt{font-variant-numeric:tabular-nums;color:var(--ink)}
+.gal-ui .hint{flex:1}
+.gal-ui .arr{display:none;gap:8px}
+.arr button{width:42px;height:42px;border-radius:50%;border:2px solid var(--line);background:var(--surface);color:var(--ink);font-size:1.4rem;line-height:1;cursor:pointer}
+.arr button:hover{border-color:var(--green)}
+@media (min-width:900px){.gal-ui .arr{display:flex}.pg{width:280px}.gal-ui .hint .m{display:none}}
+.pv-info{display:grid;grid-template-columns:1fr auto;gap:18px 28px;align-items:end;padding:6px 20px 0}
+.pv-info .txt{display:flex;flex-direction:column;gap:10px;min-width:0}
+.pv-info p{color:var(--muted)}
+.lbl{font:800 .74rem var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .skills{display:flex;flex-wrap:wrap;gap:5px}
-.skills span{font-size:.78rem;font-weight:700;background:var(--green-soft);border-radius:8px;padding:2px 8px}
-.price{display:flex;align-items:baseline;flex-wrap:wrap;gap:2px 10px;margin-top:auto}
-.price b{font:800 1.7rem var(--display);font-variant-numeric:tabular-nums}
-.price span{color:var(--muted);font-size:.86rem;font-weight:700}
-.book .btn{width:100%;padding:12px 16px}
-@media (max-width:980px){.books{grid-template-columns:1fr}}
-@media (max-width:560px){.book{grid-template-columns:1fr}}
-.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:28px;border:2px dashed var(--line);border-radius:var(--r)}
-.compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:22px}
-.plan{border-radius:var(--r);padding:18px 20px;display:flex;gap:14px;align-items:center;border:2px solid var(--line);background:var(--surface)}
-.plan .big{font:800 2rem var(--display);font-variant-numeric:tabular-nums;white-space:nowrap}
-.plan.bi{background:var(--green-soft);border-color:transparent}
-.plan small{color:var(--muted);font-weight:600;display:block}
-.plan b{font-family:var(--display);font-size:1.1rem}
-@media (max-width:640px){.compare{grid-template-columns:1fr}}
-.store-link{display:flex;justify-content:center;margin-top:26px}
+.skills span{font-size:.82rem;font-weight:800;background:var(--green-soft);border-radius:8px;padding:3px 9px}
+.books6{display:flex;flex-wrap:wrap;gap:5px}
+.books6 span{font-size:.8rem;font-weight:800;background:var(--surface);border:2px solid var(--line);border-radius:99px;padding:1px 10px}
+.buy{display:flex;flex-direction:column;gap:8px;min-width:230px}
+.price{display:flex;align-items:baseline;flex-wrap:wrap;gap:2px 10px}
+.price b{font:800 clamp(2rem,6vw,2.7rem) var(--display);font-variant-numeric:tabular-nums;line-height:1}
+.price s{color:var(--muted);font-weight:800;font-size:1.1rem}
+.price .save{background:var(--red);color:#fff;font-weight:800;font-size:.8rem;border-radius:99px;padding:2px 10px}
+.price small{display:block;width:100%;color:var(--muted);font-weight:700;font-size:.84rem}
+.buy .btn{width:100%}
+.safe{font-size:.84rem;color:var(--muted)}
+@media (max-width:760px){.pv-info{grid-template-columns:1fr}.buy{min-width:0;order:-1}}
+.note{font-size:.88rem;color:var(--muted);margin-top:16px}
 
-/* paket lengkap */
-section[id]{scroll-margin-top:72px}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.promo{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;align-self:flex-start;text-decoration:none;font-weight:800;background:var(--surface);border:2px solid var(--line);border-radius:99px;padding:6px 16px 6px 8px}
-.promo:hover{border-color:var(--green)}
-.paket{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:30px;align-items:center;background:linear-gradient(135deg,var(--pk1),var(--pk2) 55%,var(--pk3));border:2px solid var(--line);border-radius:28px;padding:24px}
-.paket-cover img{width:100%;display:block;border-radius:20px;box-shadow:0 10px 0 var(--shadow);aspect-ratio:1;object-fit:cover}
-.paket-body{display:flex;flex-direction:column;gap:14px;min-width:0}
-.paket-body h3{font-size:clamp(1.8rem,3.4vw,2.5rem)}
-.paket-body p{color:var(--muted)}
-.paket-price{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px}
-.paket-price b{font:800 clamp(2.4rem,5vw,3.3rem) var(--display);font-variant-numeric:tabular-nums;line-height:1}
-.paket-price s{color:var(--muted);font-weight:800;font-size:1.2rem;font-variant-numeric:tabular-nums}
-.paket-price .save{background:var(--red);color:#fff;font-weight:800;font-size:.85rem;border-radius:99px;padding:3px 12px}
-.paket-note{font-size:.9rem}
-.paket-books{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}
-.pb{background:var(--surface);border:2px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
-.pb .top{display:flex;align-items:center;gap:10px}
-.pb .num{flex:none;width:36px;height:36px;border-radius:12px;display:grid;place-items:center;color:#fff;font:800 1.1rem var(--display)}
-.pb h4{font-size:1.15rem;line-height:1.1}
-.pb .meta{display:flex;flex-wrap:wrap;gap:6px}
-.pb .meta span{font-size:.78rem;font-weight:800;border-radius:99px;padding:2px 10px;background:var(--green-soft)}
-.pb p{color:var(--muted);font-size:.95rem}
-@media (max-width:900px){.paket{grid-template-columns:1fr}.paket-books{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:560px){.paket-books{grid-template-columns:1fr}.paket{padding:16px}}
+/* coba gratis */
+.free{background:linear-gradient(135deg,var(--pk1),var(--pk2) 55%,var(--pk3));border:2px solid var(--line);border-radius:30px;padding:26px;display:grid;grid-template-columns:.7fr 1.3fr;gap:30px;align-items:center;position:relative;overflow:hidden}
+.free-pg{display:block;height:auto;max-width:250px;width:100%;margin-inline:auto;transform:rotate(-3deg);border-radius:14px;border:3px solid #fff;background:#fff;box-shadow:0 10px 0 var(--shadow),0 18px 28px var(--shadow)}
+.free-copy{display:flex;flex-direction:column;gap:14px;min-width:0}
+.free h2{font-size:clamp(1.8rem,4.4vw,2.7rem)}
+.free p{color:var(--muted)}
+.free .meta{font-size:.84rem;font-weight:700}
+.ig{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;background:var(--surface);border:2px solid var(--line);border-radius:18px;padding:12px 14px}
+.ig p{flex:1;min-width:200px;font-size:.95rem;color:var(--ink)}
+@media (max-width:760px){.free{grid-template-columns:1fr;padding:20px}.free-pg{max-width:200px}}
 
-/* how */
-.how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;list-style:none;padding:0;margin:0;counter-reset:s}
-.how li{background:var(--surface);border:2px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:8px}
-.how li::before{counter-increment:s;content:counter(s);width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font:800 1.3rem var(--display);color:#fff;background:var(--orange)}
+/* daftar beli */
+.list{display:grid;gap:12px}
+.row-p{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;background:var(--surface);border:2px solid var(--line);border-radius:20px;padding:12px 14px}
+.row-p.feat{background:linear-gradient(135deg,var(--pk1),var(--pk2) 55%,var(--pk3))}
+.row-p img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--bg2)}
+.row-p b{font:800 1.12rem var(--display);display:block;line-height:1.15}
+.row-p small{color:var(--muted);font-weight:700;display:block}
+.row-p .pr{font:800 1.3rem var(--display);font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.row-p .pr s{display:block;font:700 .82rem var(--body);color:var(--muted)}
+.row-p .btn{padding:12px 18px;font-size:1rem;border-radius:14px;box-shadow:0 4px 0 var(--cta-d)}
+.row-p .go{display:flex;align-items:center;gap:14px}
+@media (max-width:640px){.row-p{grid-template-columns:56px 1fr}.row-p img{width:56px;height:56px}.row-p .go{grid-column:1/-1;justify-content:space-between}.row-p .go .btn{flex:1;max-width:60%}}
+.how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:26px 0 0;counter-reset:s}
+.how li{background:var(--surface);border:2px solid var(--line);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.how li::before{counter-increment:s;content:counter(s);width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font:800 1.15rem var(--display);color:#fff;background:var(--orange)}
 .how li:nth-child(2)::before{background:var(--red)}.how li:nth-child(3)::before{background:var(--green)}
-.how b{font-family:var(--display);font-size:1.25rem}
-.how span{color:var(--muted)}
+.how b{font-family:var(--display);font-size:1.15rem}
+.how span{color:var(--muted);font-size:.95rem}
 @media (max-width:760px){.how{grid-template-columns:1fr}}
+.store-link{display:flex;justify-content:center;margin-top:22px}
 
-/* karya */
-.karya{background:var(--surface);border:2px solid var(--line);border-radius:28px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;position:relative;overflow:hidden}
-.karya h2{font-size:clamp(1.9rem,4vw,2.6rem)}
+/* testimoni jujur + kenalan + karya */
+.invite{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;background:var(--surface);border:2px dashed var(--line);border-radius:24px;padding:20px}
+.invite img{width:72px;height:72px;border-radius:50%}
+@media (max-width:560px){.invite{grid-template-columns:1fr}.invite img{width:56px;height:56px}}
+.invite h3{font-size:1.4rem;margin-bottom:4px}
+.invite p{color:var(--muted)}
+.quotes{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-bottom:14px}
+.quote{background:var(--surface);border:2px solid var(--line);border-radius:20px;padding:16px}
+.quote q{display:block;font-size:1.02rem}.quote small{display:block;margin-top:8px;color:var(--muted);font-weight:700}
+.friends{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
+.friend{background:var(--surface);border:2px solid var(--line);border-radius:var(--r);padding:12px;display:flex;flex-direction:column;gap:4px}
+.friend svg{width:52px;height:52px}
+.friend b{font:800 1.05rem var(--display)}
+.friend small{color:var(--muted);font-weight:600;line-height:1.35;font-size:.84rem}
+.meet{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;align-items:start}
+.meet .story{display:flex;flex-direction:column;gap:12px}
+.meet .qt{font-family:var(--hand);font-size:2rem;color:var(--green-ink);line-height:1.1}
+@media (max-width:860px){.meet{grid-template-columns:1fr}}
+.hunt-hint{font-size:.95rem;color:var(--muted);display:flex;align-items:center;gap:8px;margin-top:12px}
+.hunt-hint svg{width:22px;height:22px;flex:none}
+.karya{background:var(--surface);border:2px solid var(--line);border-radius:28px;padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center;position:relative;overflow:hidden}
+.karya h2{font-size:clamp(1.8rem,4vw,2.5rem)}
 .karya-copy{display:flex;flex-direction:column;gap:14px;min-width:0}
 .crayons{display:flex;gap:7px}
 .crayons i{width:12px;height:40px;border-radius:3px 3px 2px 2px;clip-path:polygon(50% 0,100% 22%,100% 100%,0 100%,0 22%)}
@@ -274,12 +263,12 @@ section[id]{scroll-margin-top:72px}
 .slot:nth-child(2){transform:rotate(-3deg)}.slot:nth-child(3){transform:rotate(2deg)}
 .slot::before{content:"";position:absolute;top:-10px;left:50%;width:56px;height:20px;transform:translateX(-50%) rotate(-3deg);background:color-mix(in srgb,var(--yellow) 70%,transparent);border-radius:3px}
 .privacy{font-size:.86rem;color:var(--muted)}
-@media (max-width:820px){.karya{grid-template-columns:1fr;padding:22px}}
+@media (max-width:820px){.karya{grid-template-columns:1fr;padding:20px}}
 
 /* faq */
 .faq{display:grid;gap:10px;max-width:820px}
 .faq details{background:var(--surface);border:2px solid var(--line);border-radius:18px;padding:4px 18px}
-.faq summary{cursor:pointer;font:800 1.12rem var(--display);padding:12px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary{cursor:pointer;font:800 1.1rem var(--display);padding:12px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--green)}
 .faq details[open] summary::after{content:"–"}
@@ -288,15 +277,25 @@ section[id]{scroll-margin-top:72px}
 /* footer */
 .foot{background:var(--soil);color:#f6e9dc;position:relative;margin-top:40px}
 .foot .roots{position:absolute;top:-38px;left:0;width:100%;height:40px;display:block}
-.foot .wrap{padding-block:46px 40px;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px}
+.foot .wrap{padding-block:42px 36px;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:26px}
 .foot h4{font-size:1.2rem;margin-bottom:8px;color:#fff}
 .foot a{text-decoration:none;font-weight:700;display:block;padding:3px 0;opacity:.9}
 .foot a:hover{opacity:1;text-decoration:underline}
 .foot p{opacity:.85;font-size:.95rem}
 .foot .brand{display:flex;flex-direction:column;gap:12px}
-.foot .brand img{width:190px;background:#fff;border-radius:14px;padding:6px 10px}
+.foot .brand img{width:180px;background:#fff;border-radius:14px;padding:6px 10px}
 .foot .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.2);padding-top:16px;font-size:.85rem;opacity:.75}
-@media (max-width:760px){.foot .wrap{grid-template-columns:1fr}}
+@media (max-width:760px){.foot .wrap{grid-template-columns:1fr}.foot{padding-bottom:84px}}
+
+/* sticky beli (HP) */
+.sbar{position:fixed;left:0;right:0;bottom:0;z-index:55;background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(10px);border-top:2px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));display:none;align-items:center;gap:12px;transform:translateY(110%);transition:transform .3s}
+.sbar.show{transform:none}
+.sbar img{width:46px;height:46px;border-radius:12px;object-fit:cover;flex:none;background:var(--bg2)}
+.sbar .nm{flex:1;min-width:0;line-height:1.2}
+.sbar .nm b{display:block;font:800 1rem var(--display);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sbar .nm small{color:var(--muted);font-weight:800}
+.sbar .btn{padding:13px 20px;font-size:1.02rem;border-radius:14px;box-shadow:0 4px 0 var(--cta-d);flex:none}
+@media (max-width:760px){.sbar{display:flex}}
 
 /* Kiki hunt */
 .kiki{position:absolute;width:30px;height:30px;padding:0;border:0;background:none;cursor:pointer;z-index:5;transition:transform .2s}
@@ -304,197 +303,147 @@ section[id]{scroll-margin-top:72px}
 .kiki svg{width:100%;height:100%;display:block}
 .kiki.found{animation:flyoff .8s ease-in forwards;pointer-events:none}
 @keyframes flyoff{to{transform:translate(40px,-120px) rotate(40deg) scale(.4);opacity:0}}
-.hunt{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;background:var(--surface);border:2px solid var(--line);border-radius:99px;padding:8px 16px 8px 10px;display:flex;align-items:center;gap:8px;font-weight:800;box-shadow:0 6px 20px var(--shadow);opacity:0;transform:translateY(calc(100% + 40px));transition:transform .4s cubic-bezier(.3,1.5,.5,1),opacity .3s}
+.hunt{position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:60;background:var(--surface);border:2px solid var(--line);border-radius:99px;padding:8px 16px 8px 10px;display:flex;align-items:center;gap:8px;font-weight:800;box-shadow:0 6px 20px var(--shadow);opacity:0;transform:translateY(calc(100% + 120px));transition:transform .4s cubic-bezier(.3,1.5,.5,1),opacity .3s}
 .hunt.show{transform:none;opacity:1}
 .hunt svg{width:26px;height:26px}
 .hunt.done{background:var(--yellow);color:#3b2a22;border-color:var(--yellow)}
-.hunt-hint{font-size:.95rem;color:var(--muted);display:flex;align-items:center;gap:8px;margin-top:4px}
-.hunt-hint svg{width:22px;height:22px;flex:none}
-#confetti{position:fixed;inset:0;pointer-events:none;z-index:70}
+@media (max-width:760px){.hunt{bottom:calc(86px + env(safe-area-inset-bottom,0px))}}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:95}
 
 /* lightbox */
-.lb[hidden]{display:none}
-.lb{position:fixed;inset:0;z-index:80;background:rgba(20,16,12,.78);display:grid;place-items:center;padding:20px}
-.lb-in{background:var(--surface);border-radius:24px;max-width:860px;width:100%;max-height:calc(100% - 20px);overflow:auto;padding:18px;display:flex;flex-direction:column;gap:12px}
-.lb-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.lb-top h3{font-size:1.4rem}
-.lb-x{border:0;background:var(--bg);color:var(--ink);width:40px;height:40px;border-radius:50%;font-size:1.4rem;cursor:pointer;flex:none}
-.lb-imgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.lb-imgs img{width:100%;border-radius:14px;display:block}
-@media (max-width:600px){.lb-imgs{grid-template-columns:1fr}}
+.lb{position:fixed;inset:0;z-index:90;background:rgba(20,16,12,.94);display:flex;flex-direction:column;color:#fff}
+.lb-top{display:flex;align-items:center;gap:12px;padding:10px 14px}
+.lb-top .cap{flex:1;font:800 1.05rem var(--display);min-width:0;line-height:1.2}
+.lb-top .cnt{font-weight:800;font-variant-numeric:tabular-nums;opacity:.8}
+.lb-x{border:0;background:rgba(255,255,255,.14);color:#fff;width:42px;height:42px;border-radius:50%;font-size:1.5rem;cursor:pointer;flex:none}
+.lb-stage{flex:1;min-height:0;display:flex;align-items:center;position:relative}
+.lb-scroll{flex:1;height:100%;overflow:auto;display:grid;place-items:center;padding:4px 10px;touch-action:pan-x pan-y pinch-zoom}
+.lb-scroll img{max-width:100%;max-height:calc(100dvh - 150px);border-radius:12px;background:#fff;cursor:zoom-in;display:block}
+.lb-scroll.z{display:block}
+.lb-scroll.z img{max-width:none;max-height:none;width:180%;cursor:zoom-out}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.2);color:#fff;font-size:1.7rem;cursor:pointer;z-index:2}
+.lb-nav.prev{left:8px}.lb-nav.next{right:8px}
+.lb-bot{display:flex;align-items:center;gap:12px;padding:10px 14px calc(12px + env(safe-area-inset-bottom,0px));justify-content:space-between}
+.lb-bot .hint{font-size:.85rem;opacity:.75;font-weight:700}
+.lb-bot .btn{padding:13px 20px;font-size:1.02rem}
+@media (max-width:600px){.lb-bot .hint{display:none}.lb-bot .btn{width:100%}}
 </style>
 
 <!-- ============ NAV ============ -->
 <nav class="nav" aria-label="Utama">
 <div class="wrap">
-<a href="#top" aria-label="CAMBI beranda"><img class="logo" src="img/cambi-logo.png" alt="CAMBI — Little Sprouts, Big Growth"></a>
+<a href="#top" aria-label="CAMBI beranda"><img class="logo" src="img/cambi-logo.png" alt="CAMBI — Little Sprouts, Big Growth" width="140" height="36"></a>
 <ul>
-<li><a href="#kenalan">Kenalan</a></li>
-<li><a href="#tumbuh">Tumbuh Kembang</a></li>
-<li><a href="#worksheet">Worksheet</a></li>
-<li><a href="#paket">Ide Main</a></li>
-<li><a href="#karya">Karya Anak</a></li>
+<li><a href="#usia">Pilih usia</a></li>
+<li><a href="#intip">Intip isi</a></li>
+<li><a href="#gratis">Coba gratis</a></li>
+<li><a href="#beli">Harga</a></li>
+<li><a href="#karya">Karya anak</a></li>
 <li><a href="#faq">FAQ</a></li>
 </ul>
-<a class="btn btn-go" href="#worksheet">Beli Worksheet</a>
+<a class="btn btn-cta" href="#beli">Lihat harga</a>
 </div>
 </nav>
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
-<div class="cloud c1" aria-hidden="true"></div><div class="cloud c2" aria-hidden="true"></div>
+<div class="cloud c1" aria-hidden="true"></div>
 <div class="wrap">
 <div class="hero-copy">
-<span class="eyebrow">Buku aktivitas anak 2–6 tahun</span>
-<h1>Tumbuh pelan-pelan, <span class="g">belajar</span> sambil <span class="o">main</span> bareng Cambi.</h1>
-<p>Worksheet siap print yang disusun mengikuti tahap tumbuh kembang anak: dari corat-coret pertama sampai menulis nama sendiri. Cukup kertas A4, krayon, dan 15 menit bareng si kecil.</p>
-<div class="pills"><span class="pill y">Usia 2–6 th</span><span class="pill b">Siap print A4</span><span class="pill r">10+ aktivitas per buku</span><span class="pill o">Indonesia + English</span></div>
+<span class="eyebrow">Buku aktivitas anak 2–6 tahun · siap print A4</span>
+<h1>Intip dulu <span class="g">isi bukunya</span>, baru <span class="o">putuskan</span>.</h1>
+<p>Halaman aslinya bisa Ayah &amp; Bunda lihat di bawah, lengkap dengan bonusnya. Tanpa tebak-tebak, tanpa kucing dalam karung.</p>
 <div class="cta">
-<a class="btn btn-go" href="#worksheet">Lihat Worksheet</a>
-<a class="btn btn-soft" href="#tumbuh">Cek tahap tumbuh kembang</a>
+<a class="btn btn-cta" href="#usia">Pilih usia si kecil ↓</a>
+<a class="btn btn-soft" href="#gratis">Coba 1 halaman gratis</a>
 </div>
-<a class="promo" href="#paket"><span class="tag new">Baru</span><span>Paket Lengkap 6 buku ide main · <b>Rp25.000</b> →</span></a>
+<div class="trust"><span>Dibuat oleh orang tua untuk anak 2–6 tahun</span><span>Cukup kertas A4 &amp; krayon</span><span>Download langsung</span></div>
+<a class="promo" href="#book-paket" data-goto="paket"><span class="tag new">Baru</span><span>Paket Lengkap 6 buku · <b>Rp25.000</b> →</span></a>
 </div>
-<div class="stage">
-<div class="garden" id="garden">
-<div class="sun" aria-hidden="true"></div>
-<div class="bubble" id="bubble" aria-live="polite">Halo! Aku Cambi.</div>
-<div class="cambi" id="cambi"><img src="img/cambi-avatar.png" alt="Cambi, kecambah hijau maskot CAMBI"></div>
-<div class="pot" aria-hidden="true"><div class="body"></div><div class="rim"></div><div class="label">CAMBI</div></div>
-</div>
-<div class="water">
-<div><div class="meter" id="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><small id="water-txt">Cambi haus nih</small></div>
-<button class="btn" id="water-btn" type="button">Siram Cambi</button>
+<div class="fan" aria-label="Contoh halaman buku CAMBI">
+<img class="pgimg f1" src="img/p/hujan-3.webp" width="800" height="1132" alt="Contoh halaman: Lanjutkan Polanya" fetchpriority="high">
+<img class="pgimg f2" src="img/p/paket-1.webp" width="800" height="1132" alt="Contoh halaman: Lomba Siput Pelan" fetchpriority="high">
+<img class="pgimg f3" src="img/p/cambi-2.webp" width="800" height="1132" alt="Contoh halaman: Labirin Cici">
+<div class="mascot"><img src="img/cambi-avatar.png" width="200" height="200" alt="Cambi, kecambah hijau maskot CAMBI"></div>
+<div class="bubble">Intip isi bukuku, yuk!</div>
 </div>
 </div>
-</div>
-<svg class="grass" viewBox="0 0 1200 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46V22c40-10 60 8 100-2s60-16 100-4 70 10 110-2 60-14 100 0 70 12 110 0 60-16 100-2 70 10 110-2 60-12 100 0 70 12 110 0 60-10 100 0 70 8 70 8V46Z" fill="var(--green)"/></svg>
+<svg class="grass" viewBox="0 0 1200 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46V24 q50-16 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0V46Z" fill="var(--green)"/></svg>
 </header>
 
-<div class="strip">
-<div class="wrap">
-<div><b>10</b><span>buku aktivitas &amp; permainan</span></div>
-<div><b>10+</b><span>aktivitas per buku</span></div>
-<div><b>2–6</b><span>tahun, sesuai tahapan</span></div>
-<div><b>Rp10rb</b><span>mulai dari, per buku</span></div>
-</div>
-</div>
-
-<!-- ============ KENALAN ============ -->
-<section class="sec" id="kenalan">
+<!-- ============ 1. PILIH USIA ============ -->
+<section class="sec" id="usia">
 <div class="wrap" style="position:relative">
 <div class="sec-head">
-<span class="eyebrow">Kenalan sama Cambi</span>
-<h2>Dulu cuma biji kecil. Sekarang jadi teman belajar.</h2>
+<span class="eyebrow">Langkah 1</span>
+<h2>Si kecil usia berapa?</h2>
+<p>Pilih usia, nanti kami tampilkan buku yang pas. Setiap anak punya tempo sendiri, jadi pakai ini sebagai peta, bukan lomba.</p>
 </div>
-<div class="meet">
-<div class="story">
-<p>Cambi adalah kecambah hijau yang tumbuh di pot milik Nara. Setiap hari Nara menyiramnya, menjemurnya di bawah sinar matahari, dan mengajaknya ngobrol. Pelan-pelan, biji kecil itu retak, muncul daun, lalu tersenyum. Nara memberinya nama: <b>Cambi</b>.</p>
-<p class="quote">"Semua yang besar, dulu juga kecil."</p>
-<p>Itulah pesan CAMBI untuk Ayah dan Bunda. Anak juga tumbuh seperti kecambah: butuh waktu, perhatian, dan kesempatan untuk mencoba. Setiap worksheet adalah satu tetes air kecil.</p>
-<ol class="timeline" aria-label="Asal-usul Cambi">
-<li><span class="st" id="st1"></span><div><b>Krek!</b><small>Biji kecil retak di dalam tanah</small></div></li>
-<li><span class="st" id="st2"></span><div><b>Plup!</b><small>Ditanam Nara di pot kesayangannya</small></div></li>
-<li><span class="st" id="st3"></span><div><b>Halo!</b><small>Daun pertama muncul, Cambi tersenyum</small></div></li>
-</ol>
-</div>
-<div>
-<h3 style="font-size:1.5rem;margin-bottom:14px">Teman-teman Cambi</h3>
-<div class="friends" id="friends"></div>
-<p class="hunt-hint"><span id="hint-bug"></span>Kiki si Kepik suka ngumpet di setiap halaman buku. Di website ini juga ada 5 Kiki yang ngumpet. Bisa nemu semuanya?</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- ============ TUMBUH KEMBANG ============ -->
-<section class="sec grow" id="tumbuh">
-<div class="wrap" style="position:relative">
-<div class="sec-head">
-<span class="eyebrow">Panduan tumbuh kembang</span>
-<h2>Si kecil lagi di tahap mana?</h2>
-<p>Pilih usia anak. Lihat apa yang biasanya sudah bisa dilakukan, ide main di rumah, dan buku CAMBI yang pas. Setiap anak punya tempo sendiri, jadi pakai ini sebagai peta, bukan lomba.</p>
-</div>
-<div class="grow-box">
-<aside class="plant-card">
-<div class="ages" role="group" aria-label="Pilih usia anak" id="ages"></div>
-<svg id="plant" viewBox="0 0 220 260" role="img" aria-label="Tanaman yang tumbuh sesuai usia"></svg>
-<h3 id="age-title">Usia 3 tahun</h3>
-<p id="age-sum"></p>
-</aside>
-<div class="domains" id="domains"></div>
-</div>
-
-<div class="ladder">
-<span class="eyebrow">Metode CAMBI</span>
-<h3>Tangga keterampilan tangan</h3>
-<p>Tangan anak perlu dilatih bertahap sebelum siap menulis. Aktivitas di buku CAMBI disusun naik seperti tangga ini, dari gerakan bebas sampai gerakan terkontrol.</p>
-<div class="steps5" id="ladder"></div>
-</div>
-</div>
-</section>
-
-<!-- ============ WORKSHEET ============ -->
-<section class="sec" id="worksheet">
-<div class="wrap" style="position:relative">
-<div class="sec-head">
-<span class="eyebrow">Worksheet CAMBI</span>
-<h2>Pilih buku, print, lalu main.</h2>
-<p>Semua buku berupa PDF siap print A4. Setiap halaman punya catatan "Untuk Orang Tua" yang menjelaskan keterampilan yang sedang dilatih.</p>
-</div>
-<div class="shop-bar">
-<div class="chips" role="group" aria-labelledby="lbl-age"><span class="label" id="lbl-age">Umur</span><span id="shop-ages" class="chips"></span></div>
-<div class="chips" role="group" aria-labelledby="lbl-lang"><span class="label" id="lbl-lang">Bahasa</span>
+<div class="picker">
+<div class="row"><span class="label" id="lbl-age">Usia</span><div class="ages" id="ages" role="group" aria-labelledby="lbl-age"></div></div>
+<div class="row"><span class="label" id="lbl-lang">Bahasa</span>
+<div class="chips" role="group" aria-labelledby="lbl-lang">
 <button class="chip" id="lang-id" data-lang="id" aria-pressed="true">Indonesia</button>
 <button class="chip" id="lang-bi" data-lang="bi" aria-pressed="false">Indonesia + English</button>
+</div></div>
+<div class="age-panel" id="age-panel"></div>
+<div class="result" id="result" aria-live="polite"></div>
 </div>
-<span class="result" id="result" aria-live="polite"></span>
-</div>
-<div class="books" id="books"></div>
-
-<div class="compare">
-<div class="plan"><span class="big">Rp10.000</span><div><b>Satuan</b><small>1 PDF Bahasa Indonesia</small></div></div>
-<div class="plan bi"><span class="big">Rp15.000</span><div><b>Paket Bilingual</b><small>2 PDF: versi Indonesia + versi English. Cocok untuk kenalan bahasa Inggris.</small></div></div>
-</div>
-<div class="store-link"><a class="btn btn-soft" href="https://lynk.id/cambikids" target="_blank" rel="noopener">Buka toko CAMBI di Lynk →</a></div>
 </div>
 </section>
 
-<!-- ============ PAKET LENGKAP ============ -->
-<section class="sec" id="paket" style="padding-top:0">
+<!-- ============ 2. INTIP ISI ============ -->
+<section class="sec intip" id="intip">
 <div class="wrap" style="position:relative">
 <div class="sec-head">
-<span class="eyebrow">Ide main tanpa layar</span>
-<h2>Paket Lengkap: 6 buku, 65 aktivitas.</h2>
-<p>Bukan cuma lembar mewarnai. Ada permainan bareng Ayah &amp; Bunda, aktivitas mandiri, menanam kacang hijau, surat dari Cambi, kartu main, sampai jadi Detektif Kiki.</p>
+<span class="eyebrow">Langkah 2</span>
+<h2>Intip isi bukunya.</h2>
+<p>Ini halaman asli dari tiap buku. Geser untuk melihat semua, ketuk gambar untuk memperbesar. Halaman berbingkai oranye adalah bonusnya.</p>
 </div>
-<article class="paket">
-<div class="paket-cover"><img id="paket-img" src="https://cdn.lynkid.my.id/products/09-10-2026/1791514607986_2949346.webp?width=900&amp;quality=90" alt="Sampul Paket Lengkap CAMBI: 6 buku, Indonesia + English"></div>
-<div class="paket-body">
-<div class="tags"><span class="tag new">Baru</span><span class="tag age">Usia 3–6 th</span><span class="tag pages">83 hlm per bahasa</span><span class="tag lang">ID + EN</span></div>
-<h3>Paket Lengkap CAMBI</h3>
-<p>1 file ZIP berisi 12 PDF A4: 6 buku dalam 2 bahasa, Indonesia dan English. Print ulang sepuasnya untuk si kecil.</p>
-<div class="paket-price"><b>Rp25.000</b><s><span class="sr">Harga normal </span>Rp60.000</s><span class="save">Hemat 58%</span></div>
-<div class="cta">
-<a class="btn btn-go" id="paket-buy" href="https://lynk.id/cambikids/vd11z98ygv17" target="_blank" rel="noopener">Beli Paket di Lynk →</a>
-<button class="btn btn-soft" id="paket-peek" type="button">Intip isi</button>
-</div>
-<p class="paket-note">Beberapa kegiatan memakai gunting dan benda kecil seperti kacang. Dampingi anak, terutama di bawah 3 tahun.</p>
-</div>
-</article>
-<div class="paket-books" id="paket-books"></div>
+<div class="pvs" id="pvs"></div>
+<p class="note" id="lang-note"></p>
 </div>
 </section>
 
-<!-- ============ CARA PAKAI ============ -->
-<section class="sec" style="padding-top:0">
-<div class="wrap">
-<div class="sec-head"><span class="eyebrow">Cara belinya</span><h2>Tiga langkah, langsung main.</h2></div>
+<!-- ============ 3. COBA GRATIS ============ -->
+<section class="sec" id="gratis">
+<div class="wrap" style="position:relative">
+<div class="free">
+<img class="free-pg" src="img/p/sample.webp" width="800" height="1132" alt="Halaman gratis: Cari Kiki di Taman" loading="lazy">
+<div class="free-copy">
+<span class="eyebrow">Belum yakin? Coba dulu</span>
+<h2>1 halaman, gratis.</h2>
+<p><b>Cari Kiki di Taman.</b> Hitung mundur 10 detik, lalu cari: ada berapa kepik yang ngumpet? Print di kertas A4 dan langsung main bareng si kecil.</p>
+<div class="cta"><a class="btn btn-cta" href="gratis/CAMBI-Contoh-Cari-Kiki-di-Taman.pdf" download data-track="gratis-unduh">Unduh PDF gratis ↓</a></div>
+<p class="meta">1 halaman A4 · PDF · cuplikan dari buku Operasi Cari Kiki di Paket Lengkap</p>
+<div class="ig"><p>Suka? Follow <b>@cambi.kids</b> untuk halaman contoh dan ide main yang baru.</p><a class="btn btn-soft" href="https://instagram.com/cambi.kids" target="_blank" rel="noopener" data-track="ig-follow">Follow di Instagram</a></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============ 4. PRODUK + BELI ============ -->
+<section class="sec" id="beli" style="padding-top:0">
+<div class="wrap" style="position:relative">
+<div class="sec-head">
+<span class="eyebrow">Langkah 3</span>
+<h2>Pilih, bayar di Lynk, print.</h2>
+<p>Pembayaran dilakukan di Lynk, bukan di website ini. File langsung bisa diunduh setelah bayar.</p>
+</div>
+<div class="list" id="list"></div>
 <ol class="how">
-<li><b>Pilih & bayar di Lynk</b><span>Tekan tombol "Beli di Lynk" di buku yang dipilih, lalu selesaikan pembayaran di sana.</span></li>
-<li><b>Download PDF</b><span>File langsung bisa diunduh setelah pembayaran berhasil. Simpan di HP atau laptop.</span></li>
-<li><b>Print & main bareng</b><span>Print di kertas A4, siapkan krayon, temani si kecil satu halaman per hari.</span></li>
+<li><b>Bayar di Lynk</b><span>Tekan "Beli di Lynk" di buku pilihan, lalu selesaikan pembayaran di sana.</span></li>
+<li><b>Download PDF</b><span>File bisa langsung diunduh setelah bayar. Simpan di HP atau laptop.</span></li>
+<li><b>Print &amp; main bareng</b><span>Print di kertas A4, siapkan krayon, temani si kecil 1–2 halaman sehari.</span></li>
 </ol>
+<div class="store-link"><a class="btn btn-soft" href="https://lynk.id/cambikids" target="_blank" rel="noopener" data-track="toko-lynk">Buka toko CAMBI di Lynk →</a></div>
+</div>
+</section>
+
+<!-- ============ CERITA ORTU ============ -->
+<section class="sec" id="cerita" style="padding-top:0">
+<div class="wrap">
+<div id="quotes"></div>
 </div>
 </section>
 
@@ -519,19 +468,37 @@ section[id]{scroll-margin-top:72px}
 </div>
 </section>
 
+<!-- ============ KENALAN (ringkas) ============ -->
+<section class="sec" id="kenalan" style="padding-top:0">
+<div class="wrap" style="position:relative">
+<div class="meet">
+<div class="story">
+<span class="eyebrow">Kenalan sama Cambi</span>
+<h2 style="font-size:clamp(1.8rem,4vw,2.5rem)">Dulu cuma biji kecil. Sekarang jadi teman belajar.</h2>
+<p>Cambi adalah kecambah hijau yang tumbuh di pot milik Nara. Setiap hari Nara menyiramnya dan mengajaknya ngobrol, sampai biji kecil itu retak, muncul daun, lalu tersenyum.</p>
+<p class="qt">"Semua yang besar, dulu juga kecil."</p>
+<p class="hunt-hint"><span id="hint-bug"></span>Kiki si Kepik suka ngumpet di setiap halaman buku. Di website ini juga ada 5 Kiki yang ngumpet. Bisa nemu semuanya?</p>
+</div>
+<div class="friends" id="friends"></div>
+</div>
+</div>
+</section>
+
 <!-- ============ FAQ ============ -->
 <section class="sec" id="faq" style="padding-top:0">
 <div class="wrap" style="position:relative">
-<div class="sec-head"><span class="eyebrow">Pertanyaan</span><h2>Yang sering ditanya Ayah & Bunda</h2></div>
+<div class="sec-head"><span class="eyebrow">Pertanyaan</span><h2>Yang sering ditanya Ayah &amp; Bunda</h2></div>
 <div class="faq">
+<details><summary>Bisa lihat isi bukunya dulu sebelum beli?</summary><p>Bisa. Di bagian "Intip isi" ada halaman asli dari tiap buku, termasuk halaman bonus. Ada juga 1 halaman gratis yang bisa diunduh dan dicoba sebelum memutuskan.</p></details>
 <details><summary>Bukunya dikirim dalam bentuk apa?</summary><p>Berupa file PDF ukuran A4 yang langsung bisa didownload setelah pembayaran di Lynk berhasil. Tidak ada buku fisik yang dikirim.</p></details>
+<details><summary>Bayarnya di mana?</summary><p>Pembayaran dilakukan di halaman Lynk setelah menekan tombol "Beli di Lynk". Website ini tidak menerima pembayaran dan tidak meminta data kartu atau rekening.</p></details>
 <details><summary>Bedanya versi Satuan dan Paket Bilingual?</summary><p>Satuan berisi 1 PDF Bahasa Indonesia (Rp10.000). Paket Bilingual berisi 2 PDF, versi Indonesia dan versi English, dengan isi aktivitas yang sama (Rp15.000). Versi English hanya tersedia di dalam paket bilingual.</p></details>
-<details><summary>Apa bedanya Paket Lengkap dengan worksheet satuan?</summary><p>Worksheet satuan (Rp10.000 atau Rp15.000 bilingual) berisi halaman aktivitas di atas kertas: mewarnai, menebalkan garis, labirin, dan berhitung. Paket Lengkap (Rp25.000) berisi ide main: permainan bareng ortu, aktivitas mandiri, jurnal menanam, surat dari Cambi, kartu, dan misi detektif. Keduanya dibeli terpisah di Lynk.</p></details>
-<details><summary>Kertas apa yang cocok untuk Paket Lengkap?</summary><p>Kertas A4 biasa cukup. Kartu, dadu, dan halaman gunting lebih awet kalau dicetak di kertas yang lebih tebal, misalnya art paper atau karton. Bagian memotong kardus hanya untuk orang dewasa.</p></details>
+<details><summary>Apa bedanya Paket Lengkap dengan worksheet satuan?</summary><p>Worksheet satuan berisi halaman aktivitas di atas kertas: mewarnai, menebalkan garis, labirin, dan berhitung. Paket Lengkap (Rp25.000) berisi ide main: permainan bareng ortu, aktivitas mandiri, jurnal menanam, surat dari Cambi, kartu, dan misi detektif. Isinya sudah termasuk versi Indonesia dan English. Keduanya dibeli terpisah di Lynk.</p></details>
+<details><summary>Kertas apa yang cocok untuk Paket Lengkap?</summary><p>Kertas A4 biasa cukup. Kartu, dadu, dan halaman gunting lebih awet kalau dicetak di kertas yang lebih tebal, misalnya art paper atau karton. Beberapa kegiatan memakai gunting dan benda kecil seperti kacang, jadi dampingi anak, terutama di bawah 3 tahun. Bagian memotong kardus hanya untuk orang dewasa.</p></details>
 <details><summary>Boleh diprint berkali-kali?</summary><p>Boleh, untuk dipakai anak sendiri di rumah. Mohon file tidak dibagikan atau dijual ulang, ya.</p></details>
 <details><summary>Anak saya belum bisa memegang krayon dengan benar. Masih cocok?</summary><p>Cocok. Halaman awal setiap buku dimulai dari gerakan bebas seperti mencoret dan melingkar. Biarkan anak mencoba dengan caranya sendiri. Pegangan jari biasanya mulai rapi di usia sekitar 4 tahun.</p></details>
 <details><summary>Berapa halaman sebaiknya dikerjakan sehari?</summary><p>Satu sampai dua halaman sudah cukup. Berhenti saat anak masih senang, supaya besok dia minta lagi.</p></details>
-<details><summary>Panduan tumbuh kembang di sini apakah pengganti pemeriksaan?</summary><p>Bukan. Panduan ini rangkuman patokan umum. Untuk pemantauan resmi, gunakan Buku KIA dan cek perkembangan rutin (KPSP) di posyandu, puskesmas, atau dokter anak.</p></details>
+<details><summary>Catatan usia di website ini apakah pengganti pemeriksaan?</summary><p>Bukan. Catatan itu rangkuman patokan umum. Untuk pemantauan resmi, gunakan Buku KIA dan cek perkembangan rutin (KPSP) di posyandu, puskesmas, atau dokter anak.</p></details>
 </div>
 </div>
 </section>
@@ -541,19 +508,19 @@ section[id]{scroll-margin-top:72px}
 <svg class="roots" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V26c60-14 120 6 200-4s140-18 220-6 120 14 200 2 140-16 220-2 120 10 180 0 120-8 180 4V40Z" fill="var(--soil)"/></svg>
 <div class="wrap">
 <div class="brand">
-<img src="img/cambi-logo.png" alt="CAMBI">
+<img src="img/cambi-logo.png" alt="CAMBI" width="180" height="46" loading="lazy">
 <p>Buku aktivitas siap print untuk anak usia 2–6 tahun. Belajar sambil main, tumbuh bareng Cambi.</p>
 </div>
 <div>
 <h4>Jelajahi</h4>
-<a href="#kenalan">Kenalan sama Cambi</a>
-<a href="#tumbuh">Panduan tumbuh kembang</a>
-<a href="#worksheet">Worksheet</a>
-<a href="#paket">Paket Lengkap Ide Main</a>
+<a href="#usia">Pilih usia</a>
+<a href="#intip">Intip isi buku</a>
+<a href="#gratis">Halaman gratis</a>
+<a href="#beli">Harga &amp; beli</a>
 <a href="#karya">Pojok Karya Anak</a>
 </div>
 <div>
-<h4>Ikuti & belanja</h4>
+<h4>Ikuti &amp; belanja</h4>
 <a href="https://instagram.com/cambi.kids" target="_blank" rel="noopener">Instagram @cambi.kids</a>
 <a href="https://lynk.id/cambikids" target="_blank" rel="noopener">Toko Lynk: lynk.id/cambikids</a>
 </div>
@@ -561,94 +528,263 @@ section[id]{scroll-margin-top:72px}
 </div>
 </footer>
 
+<!-- sticky beli (HP) -->
+<div class="sbar" id="sbar" aria-label="Beli cepat">
+<img id="sb-img" src="img/paket-cover.webp" alt="" width="46" height="46">
+<div class="nm"><b id="sb-name">Paket Lengkap CAMBI</b><small id="sb-price">Rp25.000</small></div>
+<a class="btn btn-cta" id="sb-buy" href="https://lynk.id/cambikids/vd11z98ygv17" target="_blank" rel="noopener" data-track="beli-paket">Beli di Lynk</a>
+</div>
+
 <div class="hunt" id="hunt" aria-live="polite"><span id="hunt-ico"></span><span id="hunt-txt">Kiki 0/5</span></div>
 <canvas id="confetti" aria-hidden="true"></canvas>
-<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-labelledby="lb-title">
-<div class="lb-in">
-<div class="lb-top"><h3 id="lb-title">Intip isi</h3><button class="lb-x" id="lb-x" type="button" aria-label="Tutup">×</button></div>
-<div class="lb-imgs" id="lb-imgs"></div>
-<a class="btn btn-go" id="lb-buy" href="#" target="_blank" rel="noopener">Beli di Lynk →</a>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Halaman contoh">
+<div class="lb-top"><span class="cap" id="lb-cap"></span><span class="cnt" id="lb-cnt"></span><button class="lb-x" id="lb-x" type="button" aria-label="Tutup">×</button></div>
+<div class="lb-stage">
+<button class="lb-nav prev" id="lb-prev" type="button" aria-label="Halaman sebelumnya">‹</button>
+<div class="lb-scroll" id="lb-scroll"><img id="lb-img" alt=""></div>
+<button class="lb-nav next" id="lb-next" type="button" aria-label="Halaman berikutnya">›</button>
 </div>
+<div class="lb-bot"><span class="hint">Ketuk gambar untuk memperbesar · geser untuk ganti halaman</span><a class="btn btn-cta" id="lb-buy" href="#" target="_blank" rel="noopener" data-track="">Beli di Lynk →</a></div>
 </div>
 
 <script>
 /* ================= DATA ================= */
+const TRACK_HASH = "447da7c98c190369d3085620eb51b243";
 const LYNK = {
 cambi_id:"https://lynk.id/cambikids/2vrrln0q8q32", cambi_bi:"https://lynk.id/cambikids/pjllm5d43k86",
 rutinitas_id:"https://lynk.id/cambikids/noggl5ydnl0k", rutinitas_bi:"https://lynk.id/cambikids/z0112g3l0e65",
 dunia_id:"https://lynk.id/cambikids/yxee1p18vqn5", dunia_bi:"https://lynk.id/cambikids/7dqq9ldmnd7k",
 hujan_id:"https://lynk.id/cambikids/m2jj4j77wm26", hujan_bi:"https://lynk.id/cambikids/lp77x71dly8p",
+paket:"https://lynk.id/cambikids/vd11z98ygv17"
 };
-const CDN = "https://cdn.lynkid.my.id/products/05-10-2026/";
-const Q = "?width=640&quality=90";
-const BOOKS = [
-{key:"hujan",min:3,max:6,isNew:true,t:"Cambi & Musim Hujan",p:"17 halaman",
-d:"Seri 2. Main hujan bareng Cambi, Kodi, Pelan, dan Jemi. Bonus Tebak Bayangan, Boneka Jari, dan Sertifikat Sahabat Hujan.",
+const CDN = "https://cdn.lynkid.my.id/products/";
+const Q = "?width=400&quality=85";
+const P = [
+{key:"paket",feat:true,single:true,isNew:true,min:3,max:6,t:"Paket Lengkap CAMBI",hlm:"83 hlm per bahasa",
+cover:CDN+"09-10-2026/1791514607986_2949346.webp"+Q, coverLocal:"img/paket-cover.webp", price:25000, old:60000,
+d:"6 buku aktivitas dan permainan dalam 1 paket: main bareng ortu, main sendiri, menanam kacang hijau, surat dari Cambi, kartu main, dan jadi Detektif Kiki. 12 PDF A4 (Indonesia + English), 65 halaman aktivitas per bahasa.",
+skills:["motorik halus","bercerita","berhitung","mengenal perasaan","kemandirian","rasa ingin tahu"],
+books:["Main Bareng Cambi · 15 hlm","Main Sendiri · 15 hlm","Jurnal Tumbuh · 13 hlm","Paket Surat · 18 hlm","Kartu Main · 10 hlm","Operasi Cari Kiki · 12 hlm"],
+pages:[["paket-1","Lomba Siput Pelan (Main Bareng Cambi)"],["paket-2","Cari Kiki di Kacang (Main Sendiri)"],["paket-3","Hari ke-1 (Jurnal Tumbuh Cambi)"],["paket-4","Kotak Pos & Amplop (Paket Surat)"],["paket-5","Dadu Dongeng (Kartu Main Cambi)"],["paket-6","Kartu Petunjuk (Operasi Cari Kiki)"]],
+bonus:["paket-b","Lencana Detektif Kiki"],
+safe:"Beberapa kegiatan memakai gunting dan benda kecil seperti kacang. Dampingi anak, terutama di bawah 3 tahun."},
+{key:"hujan",isNew:true,min:3,max:6,t:"Cambi & Musim Hujan",hlm:"17 hlm",
+cover:CDN+"05-10-2026/1791207060328_1112113.webp"+Q, coverBi:CDN+"05-10-2026/1791207191965_5964044.webp"+Q, coverLocal:"img/Thumbnail-Musim-Hujan-ID.jpg", price:{id:10000,bi:15000},
+d:"Seri 2. Main hujan bareng Cambi, Kodi, Pelan, dan Jemi: 12 aktivitas plus bonus Tebak Bayangan, Boneka Jari, dan Sertifikat Sahabat Hujan.",
 skills:["garis miring","garis lengkung","spiral","pola","angka","mengenal perasaan"],
-id:{cdn:CDN+"1791207060328_1112113.webp"+Q,img:"img/Thumbnail-Musim-Hujan-ID.jpg",prev:["img/Preview-Musim-Hujan-ID-1.jpg","img/Preview-Musim-Hujan-ID-2.jpg"],price:10000},
-bi:{cdn:CDN+"1791207191965_5964044.webp"+Q,img:"img/Thumbnail-Bilingual-Musim-Hujan.jpg",prev:["img/Preview-Bilingual-Musim-Hujan-1.jpg","img/Preview-Bilingual-Musim-Hujan-2.jpg"],price:15000}},
-{key:"cambi",min:3,max:6,t:"Dari Mana Cambi Datang?",p:"17 halaman",
+pages:[["hujan-1","Payung Daun"],["hujan-2","Lompat Genangan"],["hujan-3","Lanjutkan Polanya"],["hujan-4","Gluduk!"],["hujan-5","Pelangi!"]],bonus:["hujan-b","Boneka Jari"]},
+{key:"cambi",min:3,max:6,t:"Dari Mana Cambi Datang?",hlm:"17 hlm",
+cover:CDN+"05-10-2026/1791206743463_9823055.webp"+Q, coverBi:CDN+"05-10-2026/1791206912789_6789555.webp"+Q, coverLocal:"img/Thumbnail-Dari-Mana-Cambi-Datang-ID.jpg", price:{id:10000,bi:15000},
 d:"Cerita asal-usul Cambi dalam 12 aktivitas, ditutup dengan menulis C-A-M-B-I dan nama sendiri. Bonus Urutkan Cerita, Boneka Jari, dan sertifikat.",
 skills:["mewarnai","labirin","berhitung","cari perbedaan","menulis huruf"],
-id:{cdn:CDN+"1791206743463_9823055.webp"+Q,img:"img/Thumbnail-Dari-Mana-Cambi-Datang-ID.jpg",prev:["img/Preview-Dari-Mana-Cambi-Datang-ID-1.jpg","img/Preview-Dari-Mana-Cambi-Datang-ID-2.jpg"],price:10000},
-bi:{cdn:CDN+"1791206912789_6789555.webp"+Q,img:"img/Thumbnail-Bilingual-Dari-Mana-Cambi-Datang.jpg",prev:["img/Preview-Bilingual-Dari-Mana-Cambi-Datang-1.jpg","img/Preview-Bilingual-Dari-Mana-Cambi-Datang-2.jpg"],price:15000}},
-{key:"rutinitas",min:2,max:5,t:"Rutinitas Harianku",p:"15 halaman",
+pages:[["cambi-1","Biji Misterius"],["cambi-2","Labirin Cici"],["cambi-3","Hitung Tetes"],["cambi-4","Cari Perbedaan"],["cambi-5","Namaku Cambi"]],bonus:["cambi-b","Boneka Jari"]},
+{key:"rutinitas",min:2,max:5,t:"Rutinitas Harianku",hlm:"15 hlm",
+cover:CDN+"05-10-2026/1791208178105_5100375.webp"+Q, coverBi:CDN+"05-10-2026/1791208347965_9409264.webp"+Q, coverLocal:"img/Thumbnail-Rutinitas-Harianku-ID.jpg", price:{id:10000,bi:15000},
 d:"12 kegiatan sehari-hari dari bangun pagi sampai tidur: minum air putih, makan sayur, siram tanaman, baca buku. Plus Jadwal Harianku untuk dicentang tiap hari.",
 skills:["kemandirian","kebiasaan sehat","urutan waktu","mewarnai"],
-id:{cdn:CDN+"1791208178105_5100375.webp"+Q,img:"img/Thumbnail-Rutinitas-Harianku-ID.jpg",prev:["img/Preview-Rutinitas-Harianku-ID-1.jpg","img/Preview-Rutinitas-Harianku-ID-2.jpg"],price:10000},
-bi:{cdn:CDN+"1791208347965_9409264.webp"+Q,img:"img/Thumbnail-Bilingual-Rutinitas-Harianku.jpg",prev:["img/Preview-Bilingual-Rutinitas-Harianku-1.jpg","img/Preview-Bilingual-Rutinitas-Harianku-2.jpg"],price:15000}},
-{key:"dunia",min:3,max:6,t:"Dunia Sekitarku",p:"15 halaman",
+pages:[["rutin-1","Bangun Pagi!"],["rutin-2","Mandi Busa"],["rutin-3","Cuci Tangan"],["rutin-4","Selamat Tidur"],["rutin-5","Minum Air Putih"]],bonus:["rutin-b","Jadwal Harianku"]},
+{key:"dunia",min:3,max:6,t:"Dunia Sekitarku",hlm:"15 hlm",
+cover:null, coverLocal:"img/Thumbnail-Dunia-Sekitarku-ID.jpg", coverBiLocal:"img/Thumbnail-Bilingual-Dunia-Sekitarku.jpg", price:{id:10000,bi:15000},
 d:"12 aktivitas dalam 4 tema: hewan, buah, kendaraan, dan angka. Ada Sertifikat Juara Kecil di akhir buku.",
 skills:["mengenal hewan","buah","kendaraan","angka","menebalkan garis"],
-id:{img:"img/Thumbnail-Dunia-Sekitarku-ID.jpg",prev:["img/Preview-Dunia-Sekitarku-ID-1.jpg","img/Preview-Dunia-Sekitarku-ID-2.jpg"],price:10000},
-bi:{img:"img/Thumbnail-Bilingual-Dunia-Sekitarku.jpg",prev:["img/Preview-Bilingual-Dunia-Sekitarku-1.jpg","img/Preview-Bilingual-Dunia-Sekitarku-2.jpg"],price:15000}},
+pages:[["dunia-1","Sapi Belang"],["dunia-2","Rumah Ikan"],["dunia-3","Biji Semangka"],["dunia-4","Jalan Pulang"],["dunia-5","Tebalkan Angka"]],bonus:["dunia-b","Sertifikat Juara Kecil"]},
 ];
-/* Karya anak — isi setelah ada kiriman: {img, nama, umur, buku} */
-const KARYA = [];
+const KARYA = [];       /* isi setelah ada kiriman: {img, nama, umur, buku} */
+const TESTI = [];       /* isi hanya dengan ulasan asli: {teks, nama, anak}  contoh: {teks:"...", nama:"Bunda R.", anak:"4 th"} */
 
-/* Patokan umum tumbuh kembang (rangkuman dari panduan perkembangan anak, mis. KPSP & CDC) */
 const GROWTH = {
-2:{sum:"Penjelajah kecil. Banyak bergerak, kosakata bertambah cepat.",
-kasar:["Berlari dan menendang bola","Naik tangga sambil berpegangan","Berjinjit beberapa langkah"],
-halus:["Mencoret-coret bebas dengan krayon","Menumpuk 4 balok atau lebih","Makan sendiri pakai sendok"],
-bahasa:["Menggabungkan 2 kata, misal \"mau susu\"","Menunjuk gambar saat ditanya \"mana kucing?\"","Kosakata sekitar 50 kata"],
-sosial:["Main di samping anak lain","Meniru kegiatan orang dewasa","Menunjukkan rasa senang saat dipuji"],
-play:[["Coretan besar","Tempel kertas besar di lantai, biarkan anak mencoret sepuasnya."],["Siram tanaman","Ajak menyiram pot bersama, sebut nama bagian tanaman."],["Tebak suara","Tiru suara hewan, anak menunjuk gambarnya."]]},
-3:{sum:"Mulai mandiri dan penuh pertanyaan \"kenapa?\".",
-kasar:["Melompat dengan dua kaki","Mengayuh sepeda roda tiga","Naik tangga bergantian kaki"],
-halus:["Meniru gambar lingkaran","Membalik halaman buku satu per satu","Memutar tutup botol"],
-bahasa:["Bicara dalam kalimat pendek","Bertanya \"apa\", \"di mana\", \"kenapa\"","Menyebut nama dan umurnya sendiri"],
-sosial:["Mulai main bersama teman","Main pura-pura, misal masak-masakan","Mau bergantian walau masih perlu dibantu"],
-play:[["Lingkaran gelembung","Gambar lingkaran besar, anak mengikuti dengan jari lalu krayon."],["Pilah warna","Kelompokkan mainan atau tutup botol berdasarkan warna."],["Cerita gambar","Tanya \"lagi ngapain dia?\" saat membaca buku bergambar."]]},
-4:{sum:"Imajinasi lagi tinggi-tingginya. Suka cerita dan main peran.",
-kasar:["Menangkap bola besar","Berdiri satu kaki beberapa detik","Melompat ke depan"],
-halus:["Memegang krayon dengan jari, bukan digenggam","Menggambar orang dengan beberapa bagian tubuh","Membuka kancing baju"],
-bahasa:["Bercerita kejadian dalam beberapa kalimat","Menyanyikan lagu atau mengucap sajak","Menyebut beberapa warna"],
-sosial:["Main peran dengan aturan sederhana","Menghibur teman yang sedih","Mulai bisa menunggu giliran"],
-play:[["Ikuti titik","Buat garis putus-putus berbentuk hujan atau lompatan, anak menebalkan."],["Boneka jari","Main cerita pakai boneka jari dari kertas."],["Hitung camilan","Hitung kacang atau buah sebelum dimakan."]]},
-5:{sum:"Siap belajar lebih terstruktur, bangga kalau berhasil sendiri.",
-kasar:["Melompat dengan satu kaki","Berayun di ayunan sendiri","Berjalan lurus mengikuti garis"],
-halus:["Menulis beberapa huruf, biasanya dari namanya","Menggunting mengikuti garis lurus","Mengancingkan baju sendiri"],
-bahasa:["Menceritakan kembali isi cerita","Menjawab pertanyaan sederhana tentang cerita","Memahami \"kemarin\" dan \"besok\""],
-sosial:["Mengikuti aturan permainan","Mengerjakan tugas rumah sederhana","Mengungkapkan perasaan dengan kata-kata"],
-play:[["Tulis namaku","Tulis nama anak dengan titik-titik, biarkan ia menebalkan."],["Labirin","Buat jalan berliku di kertas untuk diikuti pakai krayon."],["Jadwal harian","Centang kegiatan pagi sampai malam di tabel bergambar."]]},
-6:{sum:"Calon anak SD. Mulai membaca, menulis, dan berhitung sederhana.",
-kasar:["Keseimbangan lebih baik, misal naik sepeda roda bantu","Lompat tali atau engklek","Melempar dan menangkap bola kecil"],
-halus:["Menulis nama sendiri dengan jelas","Mewarnai rapi di dalam garis","Menggambar dengan detail"],
-bahasa:["Bercerita runtut awal, tengah, akhir","Mulai membaca kata sederhana","Mengenal kata dalam bahasa lain"],
-sosial:["Bekerja sama dalam kelompok","Mulai bisa mengelola rasa kecewa","Punya teman dekat"],
-play:[["Urutkan cerita","Potong gambar cerita, anak menyusun urutannya."],["Pola","Lanjutkan pola warna atau bentuk: merah, biru, merah, ..."],["Kata dua bahasa","Sebut benda di rumah dalam bahasa Indonesia dan Inggris."]]},
+2:{sum:"Penjelajah kecil. Banyak bergerak, kosakata bertambah cepat.",ok:["Mencoret-coret bebas dengan krayon","Menumpuk 4 balok atau lebih","Menggabungkan 2 kata, misal \"mau susu\"","Menunjuk gambar saat ditanya \"mana kucing?\""]},
+3:{sum:"Mulai mandiri dan penuh pertanyaan \"kenapa?\".",ok:["Meniru gambar lingkaran","Membalik halaman buku satu per satu","Bicara dalam kalimat pendek","Bertanya \"apa\", \"di mana\", \"kenapa\""]},
+4:{sum:"Imajinasi lagi tinggi-tingginya. Suka cerita dan main peran.",ok:["Memegang krayon dengan jari, bukan digenggam","Menggambar orang dengan beberapa bagian tubuh","Bercerita kejadian dalam beberapa kalimat","Menyebut beberapa warna"]},
+5:{sum:"Siap belajar lebih terstruktur, bangga kalau berhasil sendiri.",ok:["Menulis beberapa huruf, biasanya dari namanya","Menggunting mengikuti garis lurus","Menceritakan kembali isi cerita","Memahami \"kemarin\" dan \"besok\""]},
+6:{sum:"Calon anak SD. Mulai membaca, menulis, dan berhitung sederhana.",ok:["Menulis nama sendiri dengan jelas","Mewarnai rapi di dalam garis","Bercerita runtut awal, tengah, akhir","Mulai membaca kata sederhana"]},
 };
-const DOMAINS = [
-["kasar","Motorik kasar","var(--orange)",'<path d="M12 4a2 2 0 1 1 0 .1M9 21l2-6-3-3 2-4 4 3h3M13 15l3 6" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>'],
-["halus","Motorik halus","var(--blue)",'<path d="M4 20l3-1 11-11-2-2L5 17l-1 3zM14 6l2 2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>'],
-["bahasa","Bahasa & bicara","var(--red)",'<path d="M4 5h16v10H9l-5 4z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/>'],
-["sosial","Sosial & emosi","var(--green)",'<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/>'],
-];
 
-/* ================= SVG HELPERS ================= */
+/* ================= HELPERS ================= */
+const $ = id => document.getElementById(id);
+const rp = n => "Rp" + n.toLocaleString("id-ID");
 const ladybug = () => `<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="8" r="5" fill="#3b2a22"/><ellipse cx="16" cy="18" rx="11" ry="10" fill="#e8586e" stroke="#3b2a22" stroke-width="2"/><path d="M16 8v20" stroke="#3b2a22" stroke-width="2"/><circle cx="10.5" cy="15" r="2.2" fill="#3b2a22"/><circle cx="21.5" cy="15" r="2.2" fill="#3b2a22"/><circle cx="11" cy="22" r="1.8" fill="#3b2a22"/><circle cx="21" cy="22" r="1.8" fill="#3b2a22"/><circle cx="14" cy="6.5" r="1" fill="#fff"/><circle cx="18" cy="6.5" r="1" fill="#fff"/></svg>`;
 const face = (cx,cy,s=1) => `<circle cx="${cx-6*s}" cy="${cy}" r="${2.2*s}" fill="#3b2a22"/><circle cx="${cx+6*s}" cy="${cy}" r="${2.2*s}" fill="#3b2a22"/><path d="M${cx-4*s} ${cy+5*s}q${4*s} ${4*s} ${8*s} 0" stroke="#3b2a22" stroke-width="${2*s}" fill="none" stroke-linecap="round"/><circle cx="${cx-10*s}" cy="${cy+4*s}" r="${2.4*s}" fill="#f2a7b5"/><circle cx="${cx+10*s}" cy="${cy+4*s}" r="${2.4*s}" fill="#f2a7b5"/>`;
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
+
+let lang = "id", age = 0;
+try{ const s=JSON.parse(localStorage.getItem("cambi-pick")||"{}"); if(s.lang==="bi"||s.lang==="id") lang=s.lang; }catch(e){}
+
+const price = p => p.single ? p.price : p.price[lang];
+const url = p => p.single ? LYNK.paket : LYNK[p.key+"_"+lang];
+const trk = p => "beli-" + (p.single ? p.key : p.key+"_"+lang);
+const fits = p => !age || (age>=p.min && age<=p.max);
+function coverSrc(p){
+ if(p.single) return p.cover;
+ if(lang==="bi" && p.coverBi) return p.coverBi;
+ if(lang==="bi" && p.coverBiLocal) return p.coverBiLocal;
+ return p.cover || p.coverLocal;
+}
+function coverTag(p,cls,w){
+ const src = coverSrc(p);
+ return `<img ${cls?`class="${cls}"`:""} src="${src}" width="${w}" height="${w}" alt="Sampul ${esc(p.t)}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${p.coverLocal}'">`;
+}
+
+/* ===== klik tombol beli -> halaman virtual /klik/<nama> di Metricool ===== */
+function track(name){
+ if(!name) return;
+ try{
+  if(!window.beTracker) return;
+  const old = location.pathname + location.search + location.hash;
+  history.replaceState(null,"","/klik/"+name);
+  beTracker.t({hash:TRACK_HASH});
+  history.replaceState(null,"",old);
+ }catch(e){}
+}
+document.addEventListener("click",e=>{ const a=e.target.closest("[data-track]"); if(a) track(a.getAttribute("data-track")); });
+document.addEventListener("auxclick",e=>{ const a=e.target.closest("[data-track]"); if(a && e.button===1) track(a.getAttribute("data-track")); });
+
+/* ================= PILIH USIA ================= */
+const agesEl = $("ages");
+[[0,"Semua usia"],[2,2],[3,3],[4,4],[5,5],[6,6]].forEach(([v,l])=>{
+ const b=document.createElement("button"); b.type="button"; b.className="agebtn"+(v?"":" all"); b.id="age-"+v; b.dataset.age=v;
+ b.innerHTML = v ? `${l}<small>tahun</small>` : l;
+ b.setAttribute("aria-label", v?`Usia ${v} tahun`:"Semua usia");
+ b.onclick=()=>{ age=v; paint(); if(v) $("intip").scrollIntoView({behavior:"smooth"}); };
+ agesEl.appendChild(b);
+});
+document.querySelectorAll("[data-lang]").forEach(b=>b.onclick=()=>{ lang=b.dataset.lang; paint(); });
+
+function renderPanel(){
+ const el=$("age-panel");
+ if(!age){ el.innerHTML=`<img src="img/cambi-avatar.png" width="64" height="64" alt="" loading="lazy"><div><h3>Belum pilih usia</h3><p>Pilih usia di atas untuk melihat buku yang pas, atau langsung scroll untuk melihat semua buku.</p></div>`; return; }
+ const g=GROWTH[age], list=P.filter(fits);
+ el.innerHTML=`<img src="img/cambi-avatar.png" width="64" height="64" alt="" loading="lazy"><div><h3>Usia ${age} tahun</h3><p>${g.sum}</p>
+ <ul>${g.ok.map(x=>`<li>${x}</li>`).join("")}</ul>
+ <p class="fine">Patokan umum, bukan alat diagnosis. Kalau ada kemampuan yang belum muncul jauh setelah usianya, ngobrol ke bidan, posyandu, atau dokter anak.</p>
+ <div class="fit"><b>Buku yang pas:</b>${list.map(p=>`<a href="#book-${p.key}" data-goto="${p.key}">${esc(p.t)} →</a>`).join("")}</div></div>`;
+}
+
+/* ================= INTIP ISI ================= */
+const slidesOf = p => [...p.pages.map(([f,c])=>({src:`img/p/${f}.webp`,cap:c})), {src:`img/p/${p.bonus[0]}.webp`,cap:"Bonus: "+p.bonus[1],bonus:true}];
+const zoomIco = `<svg viewBox="0 0 24 24" fill="none" stroke="#3b2a22" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21M10.5 7.5v6M7.5 10.5h6"/></svg>`;
+function pvHTML(p){
+ const sl=slidesOf(p);
+ return `<article class="pv${p.feat?" feat":""}" id="book-${p.key}" data-key="${p.key}">
+<div class="pv-head"><span data-cover></span><div><div class="tags" data-tags></div><h3>${esc(p.t)}</h3></div></div>
+<div class="gal"><div class="strip" tabindex="0" role="group" aria-label="Halaman contoh ${esc(p.t)}">
+${sl.map((s,i)=>`<button class="pg${s.bonus?" bonus":""}" type="button" data-zoom="${i}" aria-label="Perbesar: ${esc(s.cap)}"><img src="${s.src}" width="800" height="1132" alt="Contoh halaman ${esc(s.cap)}" loading="lazy" decoding="async">${s.bonus?'<span class="ribbon">Bonus</span>':""}<span class="zoom">${zoomIco}</span><span class="cap">${esc(s.cap)}</span></button>`).join("")}
+</div>
+<div class="gal-ui"><span class="hint"><span class="m">Geser </span>→ halaman berikutnya</span><span class="cnt">1/${sl.length}</span><span class="arr"><button type="button" data-dir="-1" aria-label="Sebelumnya">‹</button><button type="button" data-dir="1" aria-label="Berikutnya">›</button></span></div></div>
+<div class="pv-info"><div class="txt">
+<p>${esc(p.d)}</p>
+<span class="lbl">Yang dilatih</span><div class="skills">${p.skills.map(s=>`<span>${s}</span>`).join("")}</div>
+${p.books?`<span class="lbl">6 buku di dalamnya</span><div class="books6">${p.books.map(b=>`<span>${b}</span>`).join("")}</div>`:""}
+${p.safe?`<p class="safe">${p.safe}</p>`:""}
+</div>
+<div class="buy"><div class="price" data-price></div><a class="btn btn-cta" data-buy href="#" target="_blank" rel="noopener">Beli di Lynk →</a><span class="safe">Bayar di Lynk · PDF langsung diunduh</span></div></div>
+</article>`;
+}
+$("pvs").innerHTML = P.map(pvHTML).join("");
+
+function paintBlocks(){
+ P.forEach(p=>{
+  const el=$("book-"+p.key), show=fits(p); el.hidden=!show; if(!show) return;
+  el.querySelector("[data-cover]").innerHTML = coverTag(p,"",78);
+  el.querySelector("[data-tags]").innerHTML = `${p.feat?'<span class="tag star">Unggulan</span>':""}${p.isNew?'<span class="tag new">Baru</span>':""}<span class="tag age">Usia ${p.min}–${p.max} th</span><span class="tag pages">${p.hlm}</span>${(p.single||lang==="bi")?'<span class="tag lang">ID + EN</span>':""}`;
+  el.querySelector("[data-price]").innerHTML = p.single
+   ? `<b>${rp(p.price)}</b><s><span class="sr">Harga normal </span>${rp(p.old)}</s><span class="save">Hemat 58%</span><small>12 PDF: 6 buku x Indonesia + English</small>`
+   : `<b>${rp(price(p))}</b><small>${lang==="bi"?"2 PDF: Indonesia + English":"1 PDF Bahasa Indonesia"}</small>`;
+  const b=el.querySelector("[data-buy]"); b.href=url(p); b.setAttribute("data-track",trk(p));
+ });
+}
+/* galeri: penghitung + panah */
+document.querySelectorAll(".pv").forEach(el=>{
+ const strip=el.querySelector(".strip"), cnt=el.querySelector(".cnt"), n=strip.children.length;
+ const step=()=>{ const s=strip.children[1]; return s? s.offsetLeft - strip.children[0].offsetLeft : 300; };
+ let raf=0;
+ strip.addEventListener("scroll",()=>{ cancelAnimationFrame(raf); raf=requestAnimationFrame(()=>{ const i=Math.min(n-1,Math.round(strip.scrollLeft/step())); cnt.textContent=(i+1)+"/"+n; }); },{passive:true});
+ el.querySelectorAll("[data-dir]").forEach(b=>b.onclick=()=>strip.scrollBy({left:+b.dataset.dir*step(),behavior:"smooth"}));
+ strip.addEventListener("keydown",e=>{ if(e.key==="ArrowRight"){strip.scrollBy({left:step(),behavior:"smooth"});e.preventDefault();} if(e.key==="ArrowLeft"){strip.scrollBy({left:-step(),behavior:"smooth"});e.preventDefault();} });
+ el.querySelectorAll("[data-zoom]").forEach(b=>b.onclick=()=>openLB(el.dataset.key,+b.dataset.zoom));
+});
+
+/* ================= DAFTAR BELI ================= */
+function paintList(){
+ const list=P.filter(fits);
+ $("list").innerHTML = list.map(p=>`<div class="row-p${p.feat?" feat":""}">${coverTag(p,"",64)}<div><b>${esc(p.t)}</b><small>Usia ${p.min}–${p.max} th · ${p.hlm}${(p.single||lang==="bi")?" · ID + EN":""}</small></div>
+<div class="go"><div class="pr">${rp(price(p))}${p.single?`<s>${rp(p.old)}</s>`:""}</div><a class="btn btn-cta" href="${url(p)}" target="_blank" rel="noopener" data-track="${trk(p)}">Beli di Lynk</a></div></div>`).join("");
+}
+
+/* ================= SEMUA YANG BERGANTUNG USIA/BAHASA ================= */
+function paint(){
+ try{ localStorage.setItem("cambi-pick",JSON.stringify({lang})); }catch(e){}
+ agesEl.querySelectorAll(".agebtn").forEach(b=>b.setAttribute("aria-pressed", +b.dataset.age===age));
+ document.querySelectorAll("[data-lang]").forEach(b=>b.setAttribute("aria-pressed", b.dataset.lang===lang));
+ const n=P.filter(fits).length;
+ $("result").innerHTML = age ? `${n} produk cocok untuk usia ${age} tahun<button type="button" id="show-all">Lihat semua</button>` : `${n} produk tersedia`;
+ const sa=$("show-all"); if(sa) sa.onclick=()=>{ age=0; paint(); };
+ $("lang-note").textContent = lang==="bi" ? "Pilihan Indonesia + English: isi halamannya sama persis dengan yang terlihat di sini, plus versi English dalam 1 paket. Foto di sini memakai versi Indonesia. Paket Lengkap sudah termasuk kedua bahasa." : "Foto halaman memakai versi Indonesia. Pilih \"Indonesia + English\" di atas untuk paket 2 bahasa. Paket Lengkap sudah termasuk kedua bahasa.";
+ renderPanel(); paintBlocks(); paintList(); syncBar();
+ document.querySelectorAll("[data-goto]").forEach(a=>a.onclick=e=>{ const p=P.find(x=>x.key===a.dataset.goto); if(p && !fits(p)){ age=0; paint(); } });
+}
+
+/* ================= LIGHTBOX ================= */
+const lb=$("lb"), lbImg=$("lb-img"), lbScroll=$("lb-scroll");
+let cur={key:null,i:0,sl:[]}, lastFocus=null;
+function showLB(){
+ const s=cur.sl[cur.i], p=P.find(x=>x.key===cur.key);
+ lbImg.src=s.src; lbImg.alt="Contoh halaman "+s.cap;
+ $("lb-cap").textContent=p.t+" · "+s.cap; $("lb-cnt").textContent=(cur.i+1)+"/"+cur.sl.length;
+ lbScroll.classList.remove("z"); lbScroll.scrollTo(0,0);
+ const b=$("lb-buy"); b.href=url(p); b.setAttribute("data-track",trk(p)); b.textContent=`Beli di Lynk · ${rp(price(p))} →`;
+}
+function openLB(key,i){ const p=P.find(x=>x.key===key); cur={key,i,sl:slidesOf(p)}; lastFocus=document.activeElement; lb.hidden=false; document.body.style.overflow="hidden"; showLB(); $("lb-x").focus(); }
+function closeLB(){ lb.hidden=true; document.body.style.overflow=""; lastFocus&&lastFocus.focus&&lastFocus.focus(); }
+function stepLB(d){ cur.i=(cur.i+d+cur.sl.length)%cur.sl.length; showLB(); }
+$("lb-x").onclick=closeLB; $("lb-prev").onclick=()=>stepLB(-1); $("lb-next").onclick=()=>stepLB(1);
+lbImg.onclick=()=>lbScroll.classList.toggle("z");
+lb.addEventListener("click",e=>{ if(e.target===lbScroll) closeLB(); });
+addEventListener("keydown",e=>{ if(lb.hidden) return; if(e.key==="Escape") closeLB(); if(e.key==="ArrowRight") stepLB(1); if(e.key==="ArrowLeft") stepLB(-1); });
+let tx=null;
+lbScroll.addEventListener("touchstart",e=>{ tx = e.touches.length===1 && !lbScroll.classList.contains("z") ? e.touches[0].clientX : null; },{passive:true});
+lbScroll.addEventListener("touchend",e=>{ if(tx===null) return; const dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>50) stepLB(dx<0?1:-1); tx=null; });
+
+/* ================= STICKY BELI (HP) ================= */
+const sbar=$("sbar");
+let curKey="paket";
+function syncBar(){
+ const p=P.find(x=>x.key===curKey&&fits(x)) || P.find(fits);
+ if(!p) return;
+ $("sb-name").textContent=p.t; $("sb-price").textContent=rp(price(p))+(p.single||lang==="bi"?" · ID + EN":" · 1 PDF");
+ const i=$("sb-img"); i.src=coverSrc(p); i.onerror=()=>{ i.onerror=null; i.src=p.coverLocal; };
+ const a=$("sb-buy"); a.href=url(p); a.setAttribute("data-track",trk(p));
+}
+let ticking=false;
+function onScroll(){
+ if(ticking) return; ticking=true;
+ requestAnimationFrame(()=>{
+  ticking=false;
+  sbar.classList.toggle("show", scrollY>420);
+  const mid=innerHeight*0.5; let best=null, bd=1e9;
+  document.querySelectorAll(".pv:not([hidden])").forEach(el=>{ const r=el.getBoundingClientRect(); if(r.bottom>0 && r.top<innerHeight){ const d=Math.abs((r.top+r.bottom)/2-mid); if(d<bd){bd=d;best=el;} } });
+  if(best && best.dataset.key!==curKey){ curKey=best.dataset.key; syncBar(); }
+ });
+}
+addEventListener("scroll",onScroll,{passive:true});
+
+/* ================= CERITA ORTU, KARYA, KENALAN ================= */
+$("quotes").innerHTML = TESTI.length
+ ? `<div class="quotes">${TESTI.map(t=>`<figure class="quote" style="margin:0"><q>${esc(t.teks)}</q><small>${esc(t.nama)}${t.anak?", anak "+esc(t.anak):""}</small></figure>`).join("")}</div>`
+ : `<div class="invite"><img src="img/cambi-avatar.png" width="72" height="72" alt="" loading="lazy"><div><h3>Dibuat oleh orang tua, untuk anak 2–6 tahun.</h3><p>Belum ada ulasan di sini dan kami tidak mau mengarang. Kalau Ayah &amp; Bunda sudah mencoba bukunya, ceritakan lewat DM <b>@cambi.kids</b>. Dengan izin, ceritanya kami tampilkan di halaman ini.</p></div></div>`;
+(function(){
+ const g=$("gallery");
+ const msgs=["Karya pertama bisa punya si kecil!","Tempat ini menunggu warna-warni berikutnya","Pelangi buatan siapa ya?","Kirim lewat DM @cambi.kids"];
+ g.innerHTML = KARYA.slice(0,4).map(k=>`<figure class="slot" style="margin:0;padding:8px"><img src="${k.img}" alt="Karya ${esc(k.nama)}" style="width:100%;border-radius:8px"><figcaption><b>${esc(k.nama)}, ${k.umur} th</b><br><small>${esc(k.buku)}</small></figcaption></figure>`).join("")
+ + msgs.slice(KARYA.length,4).map(m=>`<div class="slot">${m}</div>`).join("");
+})();
+$("copy-tag").onclick=async e=>{
+ const btn=e.currentTarget;
+ try{ await navigator.clipboard.writeText("#KaryaCambi"); btn.textContent="Tersalin"; }
+ catch(err){ const r=document.createRange(); r.selectNodeContents($("hashtag")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent="Tekan salin"; }
+ setTimeout(()=>btn.textContent="Salin tagar",1800);
+};
 const FRIENDS = [
 ["Nara","Anak yang menanam Cambi dan memberinya nama.",`<svg viewBox="0 0 64 64"><path d="M14 30a18 18 0 0 1 36 0v10H14z" fill="#3b2a22"/><circle cx="32" cy="34" r="16" fill="#f6d2b4"/><path d="M16 30c4-10 12-13 16-13s12 3 16 13c-8-2-12-6-16-9-4 3-8 7-16 9z" fill="#3b2a22"/>${face(32,34,.9)}<circle cx="49" cy="22" r="4" fill="#e8586e"/></svg>`],
 ["Cici Cacing","Penggali tanah. Bikin akar Cambi bisa bernapas.",`<svg viewBox="0 0 64 64"><path d="M8 44c6-10 12-10 18 0s12 10 18 0" stroke="#f2a7b5" stroke-width="11" fill="none" stroke-linecap="round"/><circle cx="48" cy="38" r="10" fill="#f2a7b5"/>${face(48,37,.6)}</svg>`],
@@ -658,197 +794,32 @@ const FRIENDS = [
 ["Kodi","Kodok yang hobi lompat dari genangan ke genangan.",`<svg viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="22" ry="16" fill="#45a94f"/><circle cx="20" cy="22" r="9" fill="#45a94f"/><circle cx="44" cy="22" r="9" fill="#45a94f"/><circle cx="20" cy="22" r="5" fill="#fff"/><circle cx="44" cy="22" r="5" fill="#fff"/><circle cx="20" cy="22" r="2.5" fill="#3b2a22"/><circle cx="44" cy="22" r="2.5" fill="#3b2a22"/><path d="M22 44q10 8 20 0" stroke="#3b2a22" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>`],
 ["Pelan","Siput santai. Rumahnya selalu dibawa ke mana-mana.",`<svg viewBox="0 0 64 64"><path d="M6 52h44c6 0 8-4 8-8V30" stroke="#f5c02e" stroke-width="8" stroke-linecap="round" fill="none"/><circle cx="28" cy="34" r="17" fill="#ef8a3c"/><path d="M28 34m-3 0a3 3 0 1 1 6 0a7 7 0 1 1-14 0a11 11 0 1 1 22 0" stroke="#fff" stroke-width="3" fill="none"/><circle cx="58" cy="24" r="2.5" fill="#3b2a22"/></svg>`],
 ];
-
-/* ================= HERO: WATER CAMBI ================= */
-let watered = 0;
-const lines = ["Halo! Aku Cambi.","Segarnya!","Daunku makin hijau!","Aku tumbuh sedikit!","Sekali lagi dong!","Makasih! Yuk main bareng di buku!"];
-const bubble = document.getElementById("bubble"), cambi = document.getElementById("cambi"), garden = document.getElementById("garden");
-setTimeout(()=>bubble.classList.add("show"),700);
-document.getElementById("water-btn").onclick = () => {
-for(let i=0;i<7;i++){ const d=document.createElement("i"); d.className="drop"; d.style.left=(30+Math.random()*40)+"%"; d.style.animationDelay=(i*70)+"ms"; garden.appendChild(d); setTimeout(()=>d.remove(),1400); }
-watered = Math.min(5, watered+1);
-document.querySelectorAll("#meter i").forEach((m,i)=>m.classList.toggle("on",i<watered));
-setTimeout(()=>{ cambi.style.transform=`translateX(-50%) scale(${1+watered*0.045})`; bubble.textContent=lines[watered]; bubble.classList.remove("show"); void bubble.offsetWidth; bubble.classList.add("show"); },500);
-document.getElementById("water-txt").textContent = watered<5 ? `Disiram ${watered} dari 5` : "Cambi kenyang!";
-if(watered===5){ confetti(); }
-};
-
-/* ================= FRIENDS + TIMELINE ================= */
-document.getElementById("friends").innerHTML = FRIENDS.map(([n,d,s])=>`<div class="friend">${s}<b>${n}</b><small>${d}</small></div>`).join("");
-document.getElementById("hint-bug").innerHTML = ladybug();
-document.getElementById("st1").innerHTML = `<svg viewBox="0 0 52 52"><ellipse cx="26" cy="30" rx="16" ry="13" fill="#e6c9a0" stroke="#3b2a22" stroke-width="2.5"/><path d="M14 26l5-4 4 4 4-4 4 4 4-4 5 4" stroke="#3b2a22" stroke-width="2.5" fill="none"/></svg>`;
-document.getElementById("st2").innerHTML = `<svg viewBox="0 0 52 52"><path d="M10 22h32l-4 24H14z" fill="#e07b45" stroke="#3b2a22" stroke-width="2.5" stroke-linejoin="round"/><ellipse cx="26" cy="22" rx="16" ry="4" fill="#8a5a3b" stroke="#3b2a22" stroke-width="2.5"/><circle cx="26" cy="12" r="4" fill="#e6c9a0" stroke="#3b2a22" stroke-width="2"/></svg>`;
-document.getElementById("st3").innerHTML = `<svg viewBox="0 0 52 52"><circle cx="26" cy="32" r="15" fill="#6cc777" stroke="#3b2a22" stroke-width="2.5"/><path d="M26 17v-6" stroke="#3b2a22" stroke-width="2.5"/><path d="M26 11c-4-6-12-4-12-2 4 3 8 3 12 2zM26 11c4-6 12-4 12-2-4 3-8 3-12 2z" fill="#45a94f" stroke="#3b2a22" stroke-width="2"/>${face(26,32,.7)}</svg>`;
-
-/* ================= GROWTH GUIDE ================= */
-let gAge = 3;
-const agesEl = document.getElementById("ages");
-[2,3,4,5,6].forEach(a=>{ const b=document.createElement("button"); b.className="age"; b.id="g-age-"+a; b.type="button"; b.textContent=a; b.setAttribute("aria-label",`Usia ${a} tahun`); b.onclick=()=>{gAge=a;renderGrowth()}; agesEl.appendChild(b); });
-
-function plantSVG(age){
-const lvl = age-1;                       // 1..5
-const h = 40 + lvl*30;                   // stem height
-const baseY = 200, topY = baseY-h;
-let leaves = "";
-for(let i=0;i<lvl;i++){
-const y = baseY - 26 - i*((h-30)/Math.max(lvl,1)) ;
-const s = 0.7 + i*0.12, side = i%2? -1 : 1;
-leaves += `<path d="M110 ${y} c${side*18*s} ${-16*s} ${side*44*s} ${-12*s} ${side*50*s} ${-2*s} c${-side*10*s} ${14*s} ${-side*34*s} ${16*s} ${-side*50*s} ${2*s}z" fill="var(--green)" stroke="#3b2a22" stroke-width="2.5" stroke-linejoin="round"/>`;
-}
-const flower = age===6 ? `<g transform="translate(110 ${topY-6})">${[0,72,144,216,288].map(r=>`<ellipse rx="9" ry="15" cy="-14" fill="#f5c02e" stroke="#3b2a22" stroke-width="2" transform="rotate(${r})"/>`).join("")}<circle r="9" fill="#ef8a3c" stroke="#3b2a22" stroke-width="2"/></g>`
-: `<g transform="translate(110 ${topY})"><path d="M0 0c-6-12-22-12-24-6 8 8 16 8 24 6zM0 0c6-12 22-12 24-6-8 8-16 8-24 6z" fill="#45a94f" stroke="#3b2a22" stroke-width="2.2"/></g>`;
-const rulers = [1,2,3,4,5].map(i=>`<g><line x1="196" x2="206" y1="${baseY-10-i*30}" y2="${baseY-10-i*30}" stroke="var(--muted)" stroke-width="2"/><text x="190" y="${baseY-6-i*30}" text-anchor="end" font-size="11" font-weight="800" fill="var(--muted)" font-family="Nunito,sans-serif">${i+1}</text></g>`).join("");
-return `<line x1="201" x2="201" y1="${baseY-170}" y2="${baseY-10}" stroke="var(--line)" stroke-width="3" stroke-linecap="round"/>${rulers}
-<path d="M110 ${baseY} V ${topY}" stroke="#2e7d38" stroke-width="6" stroke-linecap="round" style="transition:all .5s"/>
-${leaves}${flower}
-<path d="M58 200h104l-12 54H70z" fill="#e07b45" stroke="#3b2a22" stroke-width="3" stroke-linejoin="round"/>
-<rect x="50" y="192" width="120" height="18" rx="6" fill="#e07b45" stroke="#3b2a22" stroke-width="3"/>
-<text x="110" y="236" text-anchor="middle" font-family="Baloo 2,sans-serif" font-weight="800" font-size="18" fill="#fff">${age} th</text>`;
-}
-function renderGrowth(){
-const g = GROWTH[gAge];
-agesEl.querySelectorAll(".age").forEach(b=>b.setAttribute("aria-pressed", b.textContent==gAge));
-document.getElementById("plant").innerHTML = plantSVG(gAge);
-document.getElementById("age-title").textContent = `Usia ${gAge} tahun`;
-document.getElementById("age-sum").textContent = g.sum;
-const fit = BOOKS.filter(b=>gAge>=b.min && gAge<=b.max);
-document.getElementById("domains").innerHTML =
-DOMAINS.map(([k,t,c,ic])=>`<div class="domain"><header><i style="background:${c}"><svg viewBox="0 0 24 24">${ic}</svg></i><h4>${t}</h4></header><ul>${g[k].map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("")
-+ `<div class="domain play"><header><h4>Ide main di rumah, 10–15 menit</h4></header><ul>${g.play.map(([a,b])=>`<li><b>${a}</b>${b}</li>`).join("")}</ul></div>`
-+ `<div class="fit"><span>Buku CAMBI yang pas:</span>${fit.map(b=>`<a href="#book-${b.key}" data-jump="${b.key}">${b.t} →</a>`).join("")}${gAge>=3?'<a href="#paket">Paket Lengkap Ide Main →</a>':''}</div>`
-+ `<p class="note">Ini patokan umum, bukan alat diagnosis. Kalau ada kemampuan yang belum muncul jauh setelah usianya, atau kemampuan yang tadinya bisa jadi hilang, ngobrol ke bidan, posyandu, atau dokter anak. Pantau juga lewat Buku KIA dan cek KPSP rutin.</p>`;
-document.querySelectorAll("[data-jump]").forEach(a=>a.onclick=()=>{ shopAge=gAge; renderShop(); });
-}
-
-/* ================= SKILL LADDER (canvas sketches) ================= */
-const RUNGS = [
-["Coret bebas","2 th+","Gerakan lengan besar, belum terarah.","var(--orange)", (c,w,h)=>{ c.beginPath(); let x=w*.2,y=h*.5; c.moveTo(x,y); for(let i=0;i<26;i++){x=w*(.15+Math.random()*.7);y=h*(.2+Math.random()*.6);c.lineTo(x,y);} c.stroke(); }],
-["Melingkar","3 th+","Gerakan memutar yang mulai menutup.","var(--red)", (c,w,h)=>{ c.beginPath(); for(let t=0;t<Math.PI*6;t+=.1){const r=h*.12+t*2.2; c.lineTo(w/2+Math.cos(t)*r, h/2+Math.sin(t)*r*.8);} c.stroke(); }],
-["Mewarnai bidang","3–4 th","Belajar berhenti di dalam batas.","var(--yellow)", (c,w,h)=>{ c.save(); c.strokeStyle="#3b2a22"; c.lineWidth=3; c.beginPath(); c.arc(w/2,h/2,h*.32,0,7); c.stroke(); c.restore(); c.globalAlpha=.7; c.beginPath(); for(let i=0;i<14;i++){const y=h*.26+i*h*.034; const dx=Math.sqrt(Math.max(0,(h*.3)**2-(y-h/2)**2)); c.moveTo(w/2-dx,y); c.lineTo(w/2+dx,y);} c.stroke(); c.globalAlpha=1; }],
-["Menebalkan garis","4 th+","Garis miring, lengkung, zig-zag.","var(--blue)", (c,w,h)=>{ c.save(); c.setLineDash([6,7]); c.strokeStyle="#9a8a80"; c.beginPath(); for(let i=0;i<4;i++){c.moveTo(w*(.12+i*.2),h*.7); c.quadraticCurveTo(w*(.22+i*.2),h*.15,w*(.32+i*.2),h*.7);} c.stroke(); c.restore(); c.beginPath(); c.moveTo(w*.12,h*.7); c.quadraticCurveTo(w*.22,h*.15,w*.32,h*.7); c.quadraticCurveTo(w*.42,h*.15,w*.5,h*.62); c.stroke(); }],
-["Huruf & angka","5 th+","Menulis nama dan berhitung.","var(--green)", (c,w,h)=>{ c.font=`800 ${h*.42}px "Baloo 2",sans-serif`; c.textAlign="center"; c.textBaseline="middle"; c.save(); c.setLineDash([5,6]); c.lineWidth=2; c.strokeStyle="#9a8a80"; c.strokeText("CAMBI",w/2,h/2); c.restore(); c.fillText("CA",w/2-h*.42,h/2); }],
-];
-const ladderEl = document.getElementById("ladder");
-RUNGS.forEach(([t,a,d,col,draw],i)=>{
-const el=document.createElement("div"); el.className="rung";
-el.innerHTML=`<span class="n" style="background:${col};${i===2?'color:#3b2a22':''}">${a}</span><canvas width="240" height="180" aria-hidden="true"></canvas><b>${t}</b><small>${d}</small>`;
-ladderEl.appendChild(el);
-const cv=el.querySelector("canvas"), c=cv.getContext("2d");
-const colors={"var(--orange)":"#ef8a3c","var(--red)":"#e8586e","var(--yellow)":"#f5c02e","var(--blue)":"#4a90c8","var(--green)":"#45a94f"};
-c.strokeStyle=colors[col]; c.fillStyle=colors[col]; c.lineWidth=5; c.lineCap="round"; c.lineJoin="round";
-const go=()=>{ c.clearRect(0,0,240,180); draw(c,240,180); };
-(document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(go);
-});
-
-/* ================= SHOP ================= */
-let shopAge = 0, lang = "id";
-try{ const s=JSON.parse(localStorage.getItem("cambi-pick")||"{}"); if(s.lang==="bi"||s.lang==="id") lang=s.lang; }catch(e){}
-const shopAges = document.getElementById("shop-ages");
-[["Semua",0],["2",2],["3",3],["4",4],["5",5],["6",6]].forEach(([l,v])=>{ const b=document.createElement("button"); b.className="chip"; b.id="s-age-"+v; b.textContent=v?l+" th":l; b.dataset.age=v; b.onclick=()=>{shopAge=v;renderShop()}; shopAges.appendChild(b); });
-document.querySelectorAll("[data-lang]").forEach(b=>b.onclick=()=>{lang=b.dataset.lang;renderShop()});
-const rp = n => "Rp" + n.toLocaleString("id-ID");
-function imgTag(v,alt){
-const src = v.cdn || v.img;
-return `<img src="${src}" alt="${alt}" ${v.cdn?`onerror="this.onerror=null;this.src='${v.img}'"`:""}>`;
-}
-function renderShop(){
-try{ localStorage.setItem("cambi-pick",JSON.stringify({lang})) }catch(e){}
-shopAges.querySelectorAll(".chip").forEach(b=>b.setAttribute("aria-pressed", +b.dataset.age===shopAge));
-document.querySelectorAll("[data-lang]").forEach(b=>b.setAttribute("aria-pressed", b.dataset.lang===lang));
-const list = BOOKS.filter(b=>!shopAge || (shopAge>=b.min && shopAge<=b.max));
-document.getElementById("result").textContent = shopAge ? `${list.length} buku cocok untuk usia ${shopAge} tahun` : `${list.length} buku tersedia`;
-const el = document.getElementById("books");
-if(!list.length){ el.innerHTML='<div class="empty">Belum ada buku untuk usia ini. Buku baru segera hadir!</div>'; return; }
-el.innerHTML = list.map(b=>{ const v=b[lang], url=LYNK[b.key+"_"+lang];
-return `<article class="book" id="book-${b.key}">
-<div class="cover">${imgTag(v,"Sampul "+b.t)}<button class="peek" type="button" data-peek="${b.key}">Intip isi</button></div>
-<div class="body">
-<div class="tags">${b.isNew?'<span class="tag new">Baru</span>':''}<span class="tag age">Usia ${b.min}–${b.max} th</span><span class="tag pages">${b.p}</span>${lang==="bi"?'<span class="tag lang">ID + EN</span>':''}</div>
-<h3>${b.t}</h3><p>${b.d}</p>
-<div class="skills">${b.skills.map(s=>`<span>${s}</span>`).join("")}</div>
-<div class="price"><b>${rp(v.price)}</b><span>${lang==="bi"?"2 PDF: Indonesia + English":"PDF Bahasa Indonesia"}</span></div>
-<a class="btn btn-go" href="${url}" target="_blank" rel="noopener">Beli di Lynk →</a>
-</div></article>`; }).join("");
-el.querySelectorAll("[data-peek]").forEach(btn=>btn.onclick=()=>openPeek(btn.dataset.peek));
-}
-
-/* lightbox */
-const lb=document.getElementById("lb");
-let lastFocus=null;
-function openPeek(key){
-const b=BOOKS.find(x=>x.key===key), v=b[lang];
-lastFocus=document.activeElement;
-document.getElementById("lb-title").textContent="Intip isi: "+b.t;
-document.getElementById("lb-imgs").innerHTML=v.prev.map((p,i)=>`<img src="${p}" alt="Contoh halaman ${i+1} ${b.t}">`).join("");
-document.getElementById("lb-buy").href=LYNK[key+"_"+lang];
-document.getElementById("lb-buy").textContent=`Beli di Lynk · ${rp(v.price)} →`;
-lb.hidden=false; document.getElementById("lb-x").focus();
-}
-function closePeek(){ lb.hidden=true; lastFocus && lastFocus.focus(); }
-document.getElementById("lb-x").onclick=closePeek;
-lb.onclick=e=>{ if(e.target===lb) closePeek(); };
-addEventListener("keydown",e=>{ if(e.key==="Escape" && !lb.hidden) closePeek(); });
-
-/* ================= KARYA ================= */
-(function(){
-const g=document.getElementById("gallery");
-const msgs=["Karya pertama bisa punya si kecil!","Tempat ini menunggu warna-warni berikutnya","Pelangi buatan siapa ya?","Kirim lewat DM @cambi.kids"];
-g.innerHTML = KARYA.slice(0,4).map(k=>`<figure class="slot" style="margin:0;padding:8px"><img src="${k.img}" alt="Karya ${k.nama}" style="width:100%;border-radius:8px"><figcaption><b>${k.nama}, ${k.umur} th</b><br><small>${k.buku}</small></figcaption></figure>`).join("")
-+ msgs.slice(KARYA.length,4).map(m=>`<div class="slot">${m}</div>`).join("");
-})();
-document.getElementById("copy-tag").onclick=async e=>{
-const btn=e.currentTarget;
-try{ await navigator.clipboard.writeText("#KaryaCambi"); btn.textContent="Tersalin"; }
-catch(err){ const r=document.createRange(); r.selectNodeContents(document.getElementById("hashtag")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent="Tekan salin"; }
-setTimeout(()=>btn.textContent="Salin tagar",1800);
-};
+$("friends").innerHTML = FRIENDS.map(([n,d,s])=>`<div class="friend">${s}<b>${n}</b><small>${d}</small></div>`).join("");
+$("hint-bug").innerHTML = ladybug();
 
 /* ================= KIKI HUNT ================= */
-const SPOTS = [["#top",{right:"6%",bottom:"70px"}],["#kenalan",{right:"2%",top:"10px"}],["#tumbuh",{left:"-6px",bottom:"0"}],["#worksheet",{right:"30%",top:"0"}],["#faq",{right:"4%",top:"40px"}]];
+const SPOTS = [["#top",{right:"4%",bottom:"58px"}],["#usia",{right:"2%",top:"6px"}],["#intip",{right:"3%",top:"-4px"}],["#gratis",{left:"-4px",bottom:"-6px"}],["#faq",{right:"4%",top:"40px"}]];
 let found=0;
-const hunt=document.getElementById("hunt"); document.getElementById("hunt-ico").innerHTML=ladybug();
+const hunt=$("hunt"); $("hunt-ico").innerHTML=ladybug();
 SPOTS.forEach(([sel,pos],i)=>{
-const host = sel==="#top" ? document.querySelector("#top") : document.querySelector(sel+" .wrap");
-const b=document.createElement("button"); b.className="kiki"; b.type="button"; b.id="kiki-"+i; b.setAttribute("aria-label","Kiki si Kepik ngumpet di sini");
-b.innerHTML=ladybug(); Object.assign(b.style,pos); b.style.transform=`rotate(${(i*47)%60-30}deg)`;
-b.onclick=()=>{ b.classList.add("found"); found++; hunt.classList.add("show");
-document.getElementById("hunt-txt").textContent = found<5 ? `Ketemu Kiki ${found}/5` : "Semua Kiki ketemu! Hebat!";
-if(found===5){ hunt.classList.add("done"); confetti(); } setTimeout(()=>b.remove(),900); };
-host.appendChild(b);
+ const host = sel==="#top" ? document.querySelector("#top") : document.querySelector(sel+" .wrap");
+ const b=document.createElement("button"); b.className="kiki"; b.type="button"; b.id="kiki-"+i; b.setAttribute("aria-label","Kiki si Kepik ngumpet di sini");
+ b.innerHTML=ladybug(); Object.assign(b.style,pos); b.style.transform=`rotate(${(i*47)%60-30}deg)`;
+ b.onclick=()=>{ b.classList.add("found"); found++; hunt.classList.add("show");
+  $("hunt-txt").textContent = found<5 ? `Ketemu Kiki ${found}/5` : "Semua Kiki ketemu! Hebat!";
+  if(found===5){ hunt.classList.add("done"); confetti(); } setTimeout(()=>b.remove(),900); };
+ host.appendChild(b);
 });
-
-/* ================= CONFETTI ================= */
 function confetti(){
-if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-const cv=document.getElementById("confetti"), c=cv.getContext("2d");
-cv.width=innerWidth; cv.height=innerHeight;
-const cols=["#45a94f","#ef8a3c","#f5c02e","#4a90c8","#e8586e"];
-const P=Array.from({length:140},()=>({x:innerWidth/2,y:innerHeight*.35,vx:(Math.random()-.5)*14,vy:Math.random()*-12-4,s:6+Math.random()*6,c:cols[Math.random()*5|0],r:Math.random()*6}));
-let t=0; (function f(){ c.clearRect(0,0,cv.width,cv.height); P.forEach(p=>{p.vy+=.35;p.x+=p.vx;p.y+=p.vy;p.r+=.1;c.save();c.translate(p.x,p.y);c.rotate(p.r);c.fillStyle=p.c;c.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);c.restore();}); if(++t<160) requestAnimationFrame(f); else c.clearRect(0,0,cv.width,cv.height); })();
+ if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+ const cv=$("confetti"), c=cv.getContext("2d");
+ cv.width=innerWidth; cv.height=innerHeight;
+ const cols=["#45a94f","#ef8a3c","#f5c02e","#4a90c8","#e8586e"];
+ const Pt=Array.from({length:140},()=>({x:innerWidth/2,y:innerHeight*.35,vx:(Math.random()-.5)*14,vy:Math.random()*-12-4,s:6+Math.random()*6,c:cols[Math.random()*5|0],r:Math.random()*6}));
+ let t=0; (function f(){ c.clearRect(0,0,cv.width,cv.height); Pt.forEach(p=>{p.vy+=.35;p.x+=p.vx;p.y+=p.vy;p.r+=.1;c.save();c.translate(p.x,p.y);c.rotate(p.r);c.fillStyle=p.c;c.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);c.restore();}); if(++t<160) requestAnimationFrame(f); else c.clearRect(0,0,cv.width,cv.height); })();
 }
 
-/* ================= PAKET LENGKAP ================= */
-const PAKET_URL = "https://lynk.id/cambikids/vd11z98ygv17";
-const PAKET_IMG = ["https://cdn.lynkid.my.id/products/09-10-2026/1791514608072_4198519.webp?width=900&quality=90","https://cdn.lynkid.my.id/products/09-10-2026/1791514608143_7502158.webp?width=900&quality=90"];
-const PAKET_BOOKS = [
-{n:"Main Bareng Cambi",h:15,who:"Bareng Ayah & Bunda",c:"var(--orange)",d:"12 permainan seru di rumah: Lomba Siput Pelan, Pasar Daun, Teater Bayangan, Tebak Suara, Peta Harta Karun, dan lainnya."},
-{n:"Main Sendiri Bareng Cambi",h:15,who:"Main sendiri",c:"var(--blue)",d:"12 aktivitas mandiri: Jalur Selotip, Cari Kiki di Kacang, Botol Tenang, Stempel Sayur, Puzzle, Lompat Kodi, dan lainnya."},
-{n:"Jurnal Tumbuh Cambi",h:13,who:"Ortu atau sendiri",c:"var(--green)",d:"Jurnal 7 hari menanam kacang hijau, lengkap dengan tebakan, penggaris tinggi, kalender siram, dan lembar stiker."},
-{n:"Paket Surat dari Cambi",h:18,who:"Bareng Ayah & Bunda",c:"var(--red)",d:"Rakit kotak pos dan amplop, tulis 4 surat untuk Cambi, lalu balas dengan 10 surat dari Cambi yang tinggal disalin ortu."},
-{n:"Kartu Main Cambi",h:10,who:"Bareng atau sendiri",c:"var(--yellow)",d:"Dadu Dongeng, Papan Cerita, 16 kartu \"Cambi Bilang\", Kartu Rasa, Kartu Tantangan, dan Papan Bintang."},
-{n:"Operasi Cari Kiki",h:12,who:"Tanpa perlu membaca",c:"var(--red)",d:"Gunting 10 Kiki dan sembunyikan di rumah, cari lewat kartu petunjuk bergambar, lalu raih Lencana Detektif."},
-];
-document.getElementById("paket-books").innerHTML = PAKET_BOOKS.map((b,i)=>`<div class="pb"><div class="top"><span class="num" style="background:${b.c};${i===4?'color:#3b2a22':''}">${i+1}</span><h4>${b.n}</h4></div><div class="meta"><span>${b.h} hlm</span><span>${b.who}</span></div><p>${b.d}</p></div>`).join("");
-document.getElementById("paket-peek").onclick = () => {
-lastFocus=document.activeElement;
-document.getElementById("lb-title").textContent="Intip isi: Paket Lengkap CAMBI";
-document.getElementById("lb-imgs").innerHTML=PAKET_IMG.map((p,i)=>`<img src="${p}" alt="${i?'Cara pakai':'Contoh halaman'} Paket Lengkap CAMBI">`).join("");
-document.getElementById("lb-buy").href=PAKET_URL;
-document.getElementById("lb-buy").textContent="Beli di Lynk · Rp25.000 →";
-lb.hidden=false; document.getElementById("lb-x").focus();
-};
-
-renderGrowth(); renderShop();
+paint(); onScroll();
 </script>
 
 </html>
