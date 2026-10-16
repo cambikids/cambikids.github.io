@@ -495,6 +495,7 @@ section[id]{scroll-margin-top:72px}
 <details><summary>Bedanya versi Satuan dan Paket Bilingual?</summary><p>Satuan berisi 1 PDF Bahasa Indonesia (Rp10.000). Paket Bilingual berisi 2 PDF, versi Indonesia dan versi English, dengan isi aktivitas yang sama (Rp15.000). Versi English hanya tersedia di dalam paket bilingual.</p></details>
 <details><summary>Apa bedanya Paket Lengkap dengan worksheet satuan?</summary><p>Worksheet satuan berisi halaman aktivitas di atas kertas: mewarnai, menebalkan garis, labirin, dan berhitung. Paket Lengkap (Rp25.000) berisi ide main: permainan bareng ortu, aktivitas mandiri, jurnal menanam, surat dari Cambi, kartu, dan misi detektif. Isinya sudah termasuk versi Indonesia dan English. Keduanya dibeli terpisah di Lynk.</p></details>
 <details><summary>Kertas apa yang cocok untuk Paket Lengkap?</summary><p>Kertas A4 biasa cukup. Kartu, dadu, dan halaman gunting lebih awet kalau dicetak di kertas yang lebih tebal, misalnya art paper atau karton. Beberapa kegiatan memakai gunting dan benda kecil seperti kacang, jadi dampingi anak, terutama di bawah 3 tahun. Bagian memotong kardus hanya untuk orang dewasa.</p></details>
+<details><summary>Tantangan 28 Hari harus dikerjakan berurutan?</summary><p>Tidak. Boleh lompat atau diulang sesuai mood si kecil. Hari 7, 14, 21, dan 28 sengaja dibuat lebih santai. Tantangan 28 Hari dijual terpisah, tidak termasuk di Paket Lengkap.</p></details>
 <details><summary>Boleh diprint berkali-kali?</summary><p>Boleh, untuk dipakai anak sendiri di rumah. Mohon file tidak dibagikan atau dijual ulang, ya.</p></details>
 <details><summary>Anak saya belum bisa memegang krayon dengan benar. Masih cocok?</summary><p>Cocok. Halaman awal setiap buku dimulai dari gerakan bebas seperti mencoret dan melingkar. Biarkan anak mencoba dengan caranya sendiri. Pegangan jari biasanya mulai rapi di usia sekitar 4 tahun.</p></details>
 <details><summary>Berapa halaman sebaiknya dikerjakan sehari?</summary><p>Satu sampai dua halaman sudah cukup. Berhenti saat anak masih senang, supaya besok dia minta lagi.</p></details>
@@ -556,19 +557,25 @@ cambi_id:"https://lynk.id/cambikids/2vrrln0q8q32", cambi_bi:"https://lynk.id/cam
 rutinitas_id:"https://lynk.id/cambikids/noggl5ydnl0k", rutinitas_bi:"https://lynk.id/cambikids/z0112g3l0e65",
 dunia_id:"https://lynk.id/cambikids/yxee1p18vqn5", dunia_bi:"https://lynk.id/cambikids/7dqq9ldmnd7k",
 hujan_id:"https://lynk.id/cambikids/m2jj4j77wm26", hujan_bi:"https://lynk.id/cambikids/lp77x71dly8p",
-paket:"https://lynk.id/cambikids/vd11z98ygv17"
+paket:"https://lynk.id/cambikids/vd11z98ygv17",
+tantangan_id:"https://lynk.id/cambikids/m39nj3zzrk9e", tantangan_bi:"https://lynk.id/cambikids/rlvz7lz698zm"
 };
 const CDN = "https://cdn.lynkid.my.id/products/";
 const Q = "?width=400&quality=85";
 const P = [
 {key:"paket",feat:true,single:true,isNew:true,min:3,max:6,t:"Paket Lengkap CAMBI",hlm:"83 hlm per bahasa",
 cover:CDN+"09-10-2026/1791514607986_2949346.webp"+Q, coverLocal:"img/paket-cover.webp", price:25000, old:60000,
-d:"6 buku aktivitas dan permainan dalam 1 paket: main bareng ortu, main sendiri, menanam kacang hijau, surat dari Cambi, kartu main, dan jadi Detektif Kiki. 12 PDF A4 (Indonesia + English), 65 halaman aktivitas per bahasa.",
+d:"6 buku aktivitas dan permainan dalam 1 paket: main bareng ortu, main sendiri, menanam kacang hijau, surat dari Cambi, kartu main, dan jadi Detektif Kiki. 12 PDF A4 (Indonesia + English), 65 halaman aktivitas per bahasa. Tantangan 28 Hari dijual terpisah.",
 skills:["motorik halus","bercerita","berhitung","mengenal perasaan","kemandirian","rasa ingin tahu"],
 books:["Main Bareng Cambi · 15 hlm","Main Sendiri · 15 hlm","Jurnal Tumbuh · 13 hlm","Paket Surat · 18 hlm","Kartu Main · 10 hlm","Operasi Cari Kiki · 12 hlm"],
 pages:[["paket-1","Lomba Siput Pelan (Main Bareng Cambi)"],["paket-2","Cari Kiki di Kacang (Main Sendiri)"],["paket-3","Hari ke-1 (Jurnal Tumbuh Cambi)"],["paket-4","Kotak Pos & Amplop (Paket Surat)"],["paket-5","Dadu Dongeng (Kartu Main Cambi)"],["paket-6","Kartu Petunjuk (Operasi Cari Kiki)"]],
 bonus:["paket-b","Lencana Detektif Kiki"],
 safe:"Beberapa kegiatan memakai gunting dan benda kecil seperti kacang. Dampingi anak, terutama di bawah 3 tahun."},
+{key:"tantangan",isNew:true,min:3,max:6,t:"Tantangan 28 Hari",hlm:"30 hlm",
+cover:null, coverLocal:"img/p/tantangan-cover.webp", price:{id:10000,bi:15000},
+d:"1 hari, 1 halaman, 1 langkah kecil. 28 hari tumbuh bareng Cambi dari biji sampai panen: 4 minggu berisi garis, bentuk, angka, dan kreasi. Lengkap dengan Peta Tumbuh untuk diwarnai tiap hari dan Sertifikat Panen di hari ke-28.",
+skills:["pra-menulis","bentuk & pola","angka & huruf","logika","rasa syukur"],
+pages:[["tantangan-cover","Sampul Tantangan 28 Hari"],["tantangan-peta-tumbuh","Peta Tumbuh 28 Hari"],["tantangan-hari01-coret","Hari 1: Coret Bebas di Tanah (Minggu Biji)"],["tantangan-hari08-lingkaran","Hari 8: Balon Lingkaran (Minggu Akar)"],["tantangan-hari15-angka","Hari 15: Angka 1, 2, 3 (Minggu Batang)"],["tantangan-hari21-sudoku","Hari 21: Kotak Ajaib 4 Teman (hari santai)"],["tantangan-hari22-sayap","Hari 22: Sayap Kembar (Minggu Daun)"]],bonus:["tantangan-hari28-sertifikat","Sertifikat Panen hari ke-28"]},
 {key:"hujan",isNew:true,min:3,max:6,t:"Cambi & Musim Hujan",hlm:"17 hlm",
 cover:CDN+"05-10-2026/1791207060328_1112113.webp"+Q, coverBi:CDN+"05-10-2026/1791207191965_5964044.webp"+Q, coverLocal:"img/Thumbnail-Musim-Hujan-ID.jpg", price:{id:10000,bi:15000},
 d:"Seri 2. Main hujan bareng Cambi, Kodi, Pelan, dan Jemi: 12 aktivitas plus bonus Tebak Bayangan, Boneka Jari, dan Sertifikat Sahabat Hujan.",
